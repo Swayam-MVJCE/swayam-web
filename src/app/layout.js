@@ -26,12 +26,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body
-        className={`${inter.variable} ${mirthaDisplay.variable} ${satoshi.variable}`}
+        className={`${inter.variable} ${mirthaDisplay.variable} ${satoshi.variable} overflow-hidden`}
       >
         <Navbar />
         {children}
         <div className='bg-image'></div>
         <div className='bg-gradient'></div>
+        <div class='blurred-lighting top-left'></div>
+        <div class='blurred-lighting top-right'></div>
+        <div class='blurred-lighting bottom-left'></div>
+        <div class='blurred-lighting bottom-right'></div>
       </body>
     </html>
   );
