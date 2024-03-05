@@ -35,7 +35,7 @@ body {
 .bg-image {
   position: fixed;
   top: 0;
-  background-image: url('/bg-overlay.png');
+  background-image: url("/bg-overlay.png");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -101,4 +101,22 @@ body {
 .swayam-text:hover {
   background-size: 200%;
   background-position-x: -130%;
+}
+
+/* Add this CSS to hide the scrollbar and provide a custom style for it */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent; /* thumb and track color */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent; /* color of the scroll thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent; /* color of the scroll track */
 }
