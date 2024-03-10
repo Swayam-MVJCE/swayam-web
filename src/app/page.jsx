@@ -1,5 +1,4 @@
 import ParallaxScroll from "@/components/ParallaxScroll";
-import Image from "next/image";
 
 export default function Home() {
   return (
