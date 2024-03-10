@@ -11,7 +11,7 @@ const content = [
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
-          src="/assets/placeholderimage.png"
+          src="/assets/placeholderimage.jpeg"
           width={300}
           height={300}
           className="h-full w-full object-cover"
@@ -26,7 +26,7 @@ const content = [
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
-          src="/assets/placeholderimage.png"
+          src="/assets/placeholderimage.jpeg"
           width={300}
           height={300}
           className="h-full w-full object-cover"
@@ -41,7 +41,7 @@ const content = [
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
-          src="/assets/placeholderimage.png"
+          src="/assets/placeholderimage.jpeg"
           width={300}
           height={300}
           className="h-full w-full object-cover"
