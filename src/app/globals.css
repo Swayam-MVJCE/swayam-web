@@ -36,14 +36,14 @@ body {
   position: fixed;
   top: 0;
   background-image: url('/bg-overlay.png');
-  height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
+  height: 100vh;
   animation: bg-overlay infinite 10s alternate-reverse;
-  z-index: -2;
+  z-index: -3;
   background-blend-mode: lighten;
 }
 
@@ -56,15 +56,26 @@ body {
     rgba(8, 0, 14, 1) 0%,
     rgba(73, 0, 108, 1) 100%
   );
-  height: 100%;
+  height: 100dvh;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  max-width: 100dvw;
   width: 100%;
-  z-index: -3;
+  z-index: -4;
   animation: bg-gradient-overlay 5s infinite alternate;
   background-blend-mode: lighten;
+}
+
+.light-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -4;
+  mix-blend-mode: color-dodge;
 }
 
 @keyframes bg-overlay {
@@ -110,8 +121,8 @@ body {
   background-image: url('/images/star-lighting.png');
   background-size: contain;
   background-repeat: no-repeat;
-  mix-blend-mode: color-dodge;
-  z-index: -1;
+
+  z-index: -2;
   animation-duration: 30s; /* Adjust animation duration as needed */
   animation-timing-function: linear;
   animation-iteration-count: infinite;

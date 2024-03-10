@@ -32,10 +32,12 @@ export default function RootLayout({ children }) {
         {children}
         <div className='bg-image'></div>
         <div className='bg-gradient'></div>
-        <div class='blurred-lighting top-left'></div>
-        <div class='blurred-lighting top-right'></div>
-        <div class='blurred-lighting bottom-left'></div>
-        <div class='blurred-lighting bottom-right'></div>
+        <div className='light-container'>
+          <div className='blurred-lighting top-left'></div>
+          <div className='blurred-lighting top-right'></div>
+          <div className='blurred-lighting bottom-left'></div>
+          <div className='blurred-lighting bottom-right'></div>
+        </div>
       </body>
     </html>
   );
