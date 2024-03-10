@@ -80,18 +80,18 @@ body {
 
 @keyframes bg-overlay {
   0% {
-    opacity: 60%;
-    background-size: 110%;
+    opacity: 0.6;
+    transform: scale(1.1);
     filter: brightness(100%);
   }
   50% {
-    opacity: 100%;
-    background-size: 100%;
+    opacity: 1;
+    transform: scale(1);
     filter: brightness(160%);
   }
   100% {
-    opacity: 60%;
-    background-size: 110%;
+    opacity: 0.6;
+    transform: scale(1.1);
     filter: brightness(100%);
   }
 }
