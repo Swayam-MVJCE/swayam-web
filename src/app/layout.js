@@ -30,17 +30,12 @@ export default function RootLayout({ children }) {
       >
         <Navbar />
         {children}
-<<<<<<< HEAD
         <div className="bg-image"></div>
         <div className="bg-gradient"></div>
-=======
-        <div className='bg-image'></div>
-        <div className='bg-gradient'></div>
-        <div class='blurred-lighting top-left'></div>
-        <div class='blurred-lighting top-right'></div>
-        <div class='blurred-lighting bottom-left'></div>
-        <div class='blurred-lighting bottom-right'></div>
->>>>>>> dev
+        <div class="blurred-lighting top-left"></div>
+        <div class="blurred-lighting top-right"></div>
+        <div class="blurred-lighting bottom-left"></div>
+        <div class="blurred-lighting bottom-right"></div>
       </body>
     </html>
   );
