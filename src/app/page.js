@@ -10,10 +10,10 @@ export default function Home() {
           YOUR STAGE AWAITS!
         </h1>
         <p className='max-w-4xl text-xs px-10 md:text-base font-satoshi text-center text-gray-400'>
-          Dive into the heart of MVJCE's cultural vibrancy at Swayam 2024, where
-          your talents illuminate the stage. Celebrate, compete, and connect in
-          our annual fest, showcasing the spirit and creativity of our college
-          community.
+          Dive into the heart of MVJCE&apos;s cultural vibrancy at Swayam 2024,
+          where your talents illuminate the stage. Celebrate, compete, and
+          connect in our annual fest, showcasing the spirit and creativity of
+          our college community.
         </p>
       </div>
       <div className='min-h-screen w-full flex flex-col items-center justify-center'>
