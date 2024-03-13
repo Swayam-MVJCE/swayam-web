@@ -57,7 +57,12 @@ const Footer = () => {
         </div>
       </div>
       <div className='w-full flex justify-center font-satoshi text-sm mt-5 opacity-65'>
-        Built with ❤️ by Swayam Dev Team
+        <Link
+          href={'https://github.com/SWAYAM-MVJCE/swayam-web'}
+          target='_blank'
+        >
+          Built with ❤️ by Swayam Dev Team
+        </Link>
       </div>
     </div>
   );
