@@ -1,9 +1,9 @@
-"use client";
-import React, { useRef } from "react";
-import { useMotionValueEvent, useScroll } from "framer-motion";
-import { motion } from "framer-motion";
-import { cn } from "@/utils/cn";
-import "../../app/globals.css";
+'use client';
+import React, { useRef } from 'react';
+import { useMotionValueEvent, useScroll } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { cn } from '@/utils/cn';
+import '../../app/globals.css';
 
 export const StickyScroll = ({ content, contentClassName }) => {
   const [activeCard, setActiveCard] = React.useState(0);
@@ -11,12 +11,12 @@ export const StickyScroll = ({ content, contentClassName }) => {
 
   const { scrollYProgress } = useScroll({
     container: ref,
-    offset: ["start start", "end start"],
+    offset: ['start start', 'end start'],
   });
 
   const cardLength = content.length;
 
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     const cardsBreakpoints = content.map((_, index) => index / cardLength);
     const closestBreakpointIndex = cardsBreakpoints.reduce(
       (acc, breakpoint, index) => {
@@ -33,13 +33,13 @@ export const StickyScroll = ({ content, contentClassName }) => {
 
   return (
     <motion.div
-      className="h-[30rem] overflow-y-auto flex justify-center relative space-x-80 rounded-md p-10 custom-scrollbar"
+      className='h-[30rem] overflow-y-auto flex md:flex-row bg-transparent justify-center relative space-x-20 rounded-md p-2 md:p-10 custom-scrollbar'
       ref={ref}
     >
-      <div className="div relative flex items-start px-4">
-        <div className="max-w-2xl">
+      <div className='div relative flex items-start px-4'>
+        <div className='max-w-2xl'>
           {content.map((item, index) => (
-            <div key={item.title + index} className="my-20">
+            <div key={item.title + index} className='my-20'>
               <motion.h2
                 initial={{
                   opacity: 0,
@@ -47,7 +47,7 @@ export const StickyScroll = ({ content, contentClassName }) => {
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="font-mirtha text-[100px] tracking-wide bg-gradient-purple text-transparent bg-clip-text"
+                className='font-mirtha text-7xl md:text-8xl leading-none tracking-wide bg-gradient-purple text-transparent bg-clip-text'
               >
                 {item.title}
               </motion.h2>
@@ -58,18 +58,18 @@ export const StickyScroll = ({ content, contentClassName }) => {
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-xl text-slate-300 max-w-sm mt-10"
+                className='text-lg text-gray-400 font-satoshi leading-tight max-w-xl mt-5'
               >
                 {item.description}
               </motion.p>
             </div>
           ))}
-          <div className="h-40" />
+          <div className='h-40' />
         </div>
       </div>
       <motion.div
         className={cn(
-          "hidden lg:block h-60 w-80 rounded-md bg-white sticky top-10 overflow-hidden",
+          'sticky top-10 bg-transparent hidden md:block',
           contentClassName
         )}
       >
