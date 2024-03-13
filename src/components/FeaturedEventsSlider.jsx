@@ -45,7 +45,7 @@ function FeaturedEventsSlider() {
           clickable: true,
         }}
         modules={[EffectCoverflow, Pagination, Navigation]}
-        className='swiper_container h-[550px] w-full  pt-20'
+        className='swiper_container h-[550px] w-full !pt-20'
       >
         <SwiperSlide>
           <FeaturedEventCard
