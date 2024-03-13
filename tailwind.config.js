@@ -18,6 +18,7 @@ module.exports = {
         mirtha: ['var(--font-mirtha)'],
         inter: ['var(--font-inter)'],
         satoshi: ['var(--font-satoshi)'],
+        chamisty: ['var(--font-chamisty)'],
       },
       colors: {},
     },

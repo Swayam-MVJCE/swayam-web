@@ -36,14 +36,14 @@ body {
   position: fixed;
   top: 0;
   background-image: url('/bg-overlay.png');
-  height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
+  height: 100vh;
   animation: bg-overlay infinite 10s alternate-reverse;
-  z-index: -1;
+  z-index: -2;
   background-blend-mode: lighten;
 }
 
@@ -53,35 +53,46 @@ body {
   background: rgb(8, 0, 14);
   background: linear-gradient(
     0deg,
-    rgba(8, 0, 14, 1) 0%,
+    rgb(15, 0, 27) 0%,
     rgba(73, 0, 108, 1) 100%
   );
-  height: 100%;
+  height: 100dvh;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  max-width: 100dvw;
   width: 100%;
-  z-index: -2;
+  z-index: -3;
   animation: bg-gradient-overlay 5s infinite alternate;
   background-blend-mode: lighten;
 }
 
+.light-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  mix-blend-mode: color-dodge;
+}
+
 @keyframes bg-overlay {
   0% {
-    opacity: 60%;
-    background-size: 110%;
-    filter: brightness(100%);
+    opacity: 0.8;
+    transform: scale(1.1);
+    filter: brightness(150%);
   }
   50% {
-    opacity: 100%;
-    background-size: 100%;
-    filter: brightness(160%);
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(200%);
   }
   100% {
-    opacity: 60%;
-    background-size: 110%;
-    filter: brightness(100%);
+    opacity: 0.8;
+    transform: scale(1.1);
+    filter: brightness(150%);
   }
 }
 
@@ -101,4 +112,118 @@ body {
 .swayam-text:hover {
   background-size: 200%;
   background-position-x: -130%;
+}
+
+.blurred-lighting {
+  position: absolute;
+  width: 1400px; /* Adjust the width of the blurred lighting image as needed */
+  height: 1400px; /* Adjust the height of the blurred lighting image as needed */
+  background-image: url('/images/star-lighting.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+  animation-duration: 30s; /* Adjust animation duration as needed */
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.top-left {
+  top: -90%;
+  left: -50%;
+  animation-name: moveYTopLeft;
+}
+
+.top-right {
+  top: -90%;
+  right: -50%;
+  animation-name: moveYTopRight;
+}
+
+.bottom-left {
+  bottom: -90%;
+  left: -50%;
+  animation-name: moveYBottomLeft;
+}
+
+.bottom-right {
+  bottom: -90%;
+  right: -50%;
+  animation-name: moveYBottomRight;
+}
+
+@keyframes moveYTopLeft {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    filter: saturate(0);
+  }
+  50% {
+    transform: translateY(100vh) rotate(360deg);
+    filter: saturate(130%);
+  }
+  100% {
+    transform: translateY(0) rotate(720deg);
+    filter: saturate(0);
+  }
+}
+
+@keyframes moveYTopRight {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    filter: saturate(0);
+  }
+  50% {
+    transform: translateY(100vh) rotate(360deg);
+    filter: saturate(100%);
+  }
+  100% {
+    transform: translateY(0) rotate(720deg);
+    filter: saturate(0);
+  }
+}
+
+@keyframes moveYBottomLeft {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    filter: saturate(0);
+  }
+  50% {
+    transform: translateY(-100vh) rotate(360deg);
+    filter: saturate(0%);
+  }
+  100% {
+    transform: translateY(0) rotate(720deg);
+    filter: saturate(0);
+  }
+}
+
+@keyframes moveYBottomRight {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    filter: saturate(0);
+  }
+  50% {
+    transform: translateY(-100vh) rotate(360deg);
+    filter: saturate(130%);
+  }
+  100% {
+    transform: translateY(0) rotate(720deg);
+    filter: saturate(0);
+  }
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent; /* thumb and track color */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent; /* color of the scroll thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent; /* color of the scroll track */
 }

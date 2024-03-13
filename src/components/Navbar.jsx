@@ -1,14 +1,24 @@
+'use client';
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <nav className='w-full flex flex-row items-center justify-between md:px-24 px-5 py-8 absolute top-0 z-10'>
+    <nav className='w-screen relative flex flex-row items-center justify-between md:px-24 px-4 py-4 z-10'>
       <Link href='/'>
-        <img src='/swayam-logo.png' className='h-16 object-fit' />
+        <img
+          src='/images/swayam-logo.svg'
+          className=' h-10 md:h-12 object-fit hover:scale-105 transition duration-200 '
+        />
       </Link>
-      <div className='flex flex-row items-center justify-evenly w-full max-w-lg gap-28 text-md font-satoshi text-[#D6D6D6]'>
+      <div className='hidden md:flex flex-row items-center justify-evenly w-full max-w-lg gap-28 text-md font-satoshi text-[#D6D6D6]'>
         <Link
           href='#'
           className='transition hover:text-rose-300 hover:scale-105 duration-300'
@@ -28,12 +38,31 @@ const Navbar = () => {
           Contact
         </Link>
       </div>
-      <div>
-        {/* Glassmorphism button below */}
-        <button class="group group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-rose-300 hover:before:[box-shadow:_20px_20px_20px_30px_#a21caf] duration-500 before:duration-500 hover:duration-500  hover:after:-right-8 hover:before:right-12 hover:before:-bottom-8 hover:before:blur hover:decoration-2 hover:text-rose-300 relative bg-transparent h-12 w-52 border-transparent border-gray-700 border text-center p-3 text-gray-50 text-base font-satoshi rounded-lg  overflow-hidden  before:absolute before:w-12 before:h-12 before:content[''] before:right-1 before:top-1 before:z-10 before:bg-violet-500 before:rounded-full before:blur-lg  after:absolute after:z-10 after:w-20 after:h-20 after:content['']  after:bg-rose-300 after:right-8 after:top-3 after:rounded-full after:blur-lg">
-          Register
+      <div className='md:hidden'>
+        <button onClick={toggleMenu}>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            className='h-6 w-6'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+          >
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth={2}
+              d='M4 6h16M4 12h16M4 18h16'
+            />
+          </svg>
         </button>
       </div>
+      {menuOpen && (
+        <div className='md:hidden absolute flex flex-col gap-3 font-satoshi top-20 left-0 bg-black bg-opacity-35 w-full py-6 px-8 rounded-md shadow-md'>
+          <Link href='#'>Home</Link>
+          <Link href='#'>Events</Link>
+          <Link href='#'>Contact</Link>
+        </div>
+      )}
     </nav>
   );
 };
