@@ -27,6 +27,7 @@ export default function Home() {
             controls
             playsInline
             className='w-full rounded-xl'
+            loop
           >
             <source
               src='https://res.cloudinary.com/dthmnj96x/video/upload/v1710348215/teaser_woja4e.mp4'
