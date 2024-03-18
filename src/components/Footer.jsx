@@ -32,13 +32,7 @@ const Footer = () => {
         <div className='flex flex-col justify-start items-start gap-1 basis-1/3'>
           <p className='text-gray-300 font-bold text-lg max-w-64'>Contact</p>
           <p className='text-gray-300 text-sm font-light'>
-            Phone: 080-4299-1000
-          </p>
-          <p className='text-gray-300 text-sm font-light'>
-            Email: &nbsp;
-            <a href='mailto:swayamofficial@gmail.com'>
-              swayamofficial@gmail.com
-            </a>
+            Phone: 080-4299-1022
           </p>
         </div>
         <div className='flex flex-col justify-start items-start gap-1 basis-1/3'>
@@ -61,7 +55,7 @@ const Footer = () => {
           href={'https://github.com/SWAYAM-MVJCE/swayam-web'}
           target='_blank'
         >
-          Built with ❤️ by Swayam Dev Team
+          Built by Swayam Dev Team
         </Link>
       </div>
     </div>

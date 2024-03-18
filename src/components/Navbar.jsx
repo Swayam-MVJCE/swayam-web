@@ -11,14 +11,20 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='w-screen relative flex flex-row items-center justify-between md:px-24 px-4 py-4 z-10'>
+    <nav className='w-screen relative flex flex-row items-center justify-between md:px-14 px-4 py-4 z-10'>
+      <Link href='/'>
+        <img
+          src='/images/mvj-logo.png'
+          className=' h-10 md:h-20 object-fit hover:scale-105 transition duration-200 '
+        />
+      </Link>
       <Link href='/'>
         <img
           src='/images/swayam-logo.svg'
-          className=' h-10 md:h-12 object-fit hover:scale-105 transition duration-200 '
+          className=' h-10 md:h-14 object-fit hover:scale-105 transition duration-200 '
         />
       </Link>
-      <div className='hidden md:flex flex-row items-center justify-evenly w-full max-w-lg gap-28 text-md font-satoshi text-[#D6D6D6]'>
+      <div className='hidden md:flex flex-row items-center justify-evenly gap-6 text-md font-satoshi text-[#D6D6D6]'>
         <Link
           href='#'
           className='transition hover:text-rose-300 hover:scale-105 duration-300'
