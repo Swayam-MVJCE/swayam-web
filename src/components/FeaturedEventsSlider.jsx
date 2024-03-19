@@ -100,7 +100,7 @@ function FeaturedEventsSlider() {
           <MainEventCard
             image='/images/featured-events/kalakshetra.png'
             title='KALAkshetra'
-            organizer='MAIN EVENT'
+            organizer='MEGA EVENT'
           ></MainEventCard>
         </SwiperSlide>
         {slides.map((slide, index) => (
