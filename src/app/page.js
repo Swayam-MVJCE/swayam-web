@@ -1,14 +1,14 @@
 import FeaturedEventsSlider from '@/components/FeaturedEventsSlider';
 import ParallaxScroll from '@/components/ParallaxScroll';
-import Video from 'next-video';
 
 export default function Home() {
   return (
-    <main className=''>
+    <main className='overflow-x-hidden'>
       <div className='min-h-screen flex flex-col items-center justify-center -mt-20'>
-        <h1 className='font-mirtha text-9xl text-center md:text-[160px] tracking-wide leading-none bg-gradient-purple text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500 swayam-text'>
-          YOUR STAGE AWAITS!
-        </h1>
+        <p class='font-mirtha w-fit md:w-full text-9xl text-center md:text-[160px] text-transparent swayam-text-animation tracking-wide leading-none bg-gradient-purple select-none hover:tracking-wider transition-all duration-500 swayam-text'>
+          YOUR STAGE AWAITS
+        </p>
+
         <p className='max-w-4xl text-xs px-10 md:text-base font-satoshi text-center text-gray-400'>
           Dive into the heart of MVJCE&apos;s cultural vibrancy at Swayam 2024,
           where your talents illuminate the stage. Celebrate, compete, and
@@ -16,9 +16,9 @@ export default function Home() {
           our college community.
         </p>
       </div>
-      <div className='min-h-screen w-full flex flex-col items-center justify-center'>
-        <h1 className='font-mirtha text-6xl text-center md:text-8xl mt-4 tracking-wide leading-none bg-gradient-purple text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500 swayam-text'>
-          GET READY FOR SWAYAM!
+      <div className='min-h-screen w-full flex flex-col items-center gap-10 justify-center'>
+        <h1 className='font-mirtha text-6xl text-center md:text-8xl mt-4 tracking-wide leading-none px-4 bg-gradient-purple text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500 swayam-text'>
+          GET READY FOR SWAYAM 2024!
         </h1>
         <div className='w-full px-4 md:w-3/5 overflow-hidden '>
           <video
@@ -40,10 +40,14 @@ export default function Home() {
         <ParallaxScroll />
       </div>
 
-      <div className='min-h-screen w-full flex flex-col items-center justify-center'>
+      <div
+        id='featured'
+        className='min-h-screen w-full flex flex-col items-center justify-center'
+      >
         <h1 className='font-mirtha text-center text-8xl mt-4 tracking-wide leading-none bg-gradient-purple text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500 swayam-text'>
           FEATURED EVENTS
         </h1>
+
         <FeaturedEventsSlider />
       </div>
     </main>

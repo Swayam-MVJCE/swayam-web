@@ -41,7 +41,7 @@ const content = [
   {
     title: 'Last Time at Swayam',
     description:
-      'The previous edition of Swayam marked a high point for MVJCE Bengaluru, showcasing the diverse talents and cultural heritage of our student community. With participation from over 20,000 attendees, the festival featured more than 50 events, spanning music, dance, literature, and fine arts.',
+      'The previous edition of Swayam marked a high point for MVJCE Bengaluru, showcasing the diverse talents and cultural heritage of our student community. With participation from over 5,000 attendees, the festival featured more than 50 events, spanning music, dance, literature, and fine arts.',
     content: (
       <div className='w-[450px] h-full relative flex items-center justify-center text-white group'>
         <img

@@ -11,6 +11,55 @@ import 'swiper/css/navigation';
 import { Pagination, EffectCoverflow, Navigation } from 'swiper/modules';
 import { PinContainer } from './ui/Card3D';
 import FeaturedEventCard from './FeaturedEventCard';
+import MainEventCard from './MainEventCard';
+
+const slides = [
+  {
+    image: '/images/featured-events/depiction.png',
+    title: 'Depiction - Water Colour Painting',
+    organizer: 'Fine Arts',
+  },
+  {
+    image: '/images/featured-events/doodling.png',
+    title: 'Doodling',
+    organizer: 'Fine Arts',
+  },
+  {
+    image: '/images/featured-events/le-panga.png',
+    title: 'Le Panga - Dance Battle',
+    organizer: 'Dance',
+  },
+  {
+    image: '/images/featured-events/short-film.png',
+    title: 'Short Film Making',
+    organizer: 'Theatre and Production',
+  },
+  {
+    image: '/images/featured-events/mime.png',
+    title: 'Mime Group',
+    organizer: 'Theatre and Production',
+  },
+  {
+    image: '/images/featured-events/sangeet-samrat.png',
+    title: 'Sangeet Samrat',
+    organizer: 'Music',
+  },
+  {
+    image: '/images/featured-events/battle-of-bands.png',
+    title: 'Battle of Bands',
+    organizer: 'Music',
+  },
+  {
+    image: '/images/featured-events/jam.png',
+    title: 'JAM',
+    organizer: 'Literature',
+  },
+  {
+    image: '/images/featured-events/slam-poetry.png',
+    title: 'Slam Poetry',
+    organizer: 'Literature',
+  },
+];
 
 function FeaturedEventsSlider() {
   const [isMobile, setIsMobile] = useState(false); // Initialize without a specific value
@@ -45,71 +94,24 @@ function FeaturedEventsSlider() {
           clickable: true,
         }}
         modules={[EffectCoverflow, Pagination, Navigation]}
-        className='swiper_container h-[550px] w-full !pt-20'
+        className='swiper_container h-[550px] overflow-visible w-full !pt-20'
       >
         <SwiperSlide>
-          <FeaturedEventCard
-            image={'/images/featured-poster.png'}
-            title={'Short Film Making'}
-            organizer={'Raagabhinaya'}
-            date={'12th March 2024'}
-            href={'/events/short-film-making'}
-          />
+          <MainEventCard
+            image='/images/featured-events/kalakshetra.png'
+            title='KALAkshetra'
+            organizer='MAIN EVENT'
+          ></MainEventCard>
         </SwiperSlide>
-        <SwiperSlide>
-          <FeaturedEventCard
-            image={'/images/featured-poster.png'}
-            title={'Short Film Making'}
-            organizer={'Raagabhinaya'}
-            date={'12th March 2024'}
-            href={'/events/short-film-making'}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <FeaturedEventCard
-            image={'/images/featured-poster.png'}
-            title={'Short Film Making'}
-            organizer={'Raagabhinaya'}
-            date={'12th March 2024'}
-            href={'/events/short-film-making'}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <FeaturedEventCard
-            image={'/images/featured-poster.png'}
-            title={'Short Film Making'}
-            organizer={'Raagabhinaya'}
-            date={'12th March 2024'}
-            href={'/events/short-film-making'}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <FeaturedEventCard
-            image={'/images/featured-poster.png'}
-            title={'Short Film Making'}
-            organizer={'Raagabhinaya'}
-            date={'12th March 2024'}
-            href={'/events/short-film-making'}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <FeaturedEventCard
-            image={'/images/featured-poster.png'}
-            title={'Short Film Making'}
-            organizer={'Raagabhinaya'}
-            date={'12th March 2024'}
-            href={'/events/short-film-making'}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <FeaturedEventCard
-            image={'/images/featured-poster.png'}
-            title={'Short Film Making'}
-            organizer={'Raagabhinaya'}
-            date={'12th March 2024'}
-            href={'/events/short-film-making'}
-          />
-        </SwiperSlide>
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <FeaturedEventCard
+              image={slide.image}
+              title={slide.title}
+              organizer={slide.organizer}
+            />
+          </SwiperSlide>
+        ))}
 
         <div className='slider-controler'>
           <div className='swiper-button-prev slider-arrow'>

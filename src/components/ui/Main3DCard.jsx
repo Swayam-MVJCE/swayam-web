@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/utils/cn';
 
-export const PinContainer = ({
+export const MainPinContainer = ({
   children,
   title,
   href,
@@ -41,7 +41,7 @@ export const PinContainer = ({
           style={{
             transform: transform,
           }}
-          className='absolute left-1/2 p-2 top-1/2  flex justify-start items-start  rounded-lg  shadow-[0_8px_16px_rgb(0_0_0/0.4)] bg-black bg-opacity-15 backdrop-blur-lg border border-white/[0.2] group-hover/pin:border-white/[0.2] transition duration-700'
+          className='absolute left-1/2 p-2 top-1/2 main-event  flex justify-start items-start  rounded-lg   bg-black bg-opacity-50 backdrop-blur-3xl border-2 border-opacity-65 border-[rgba(177,125,236,1)] transition duration-700'
         >
           <div className={cn(' relative z-50 ', className)}>{children}</div>
         </div>
