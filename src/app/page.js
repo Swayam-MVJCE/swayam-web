@@ -17,7 +17,7 @@ export default function Home() {
         </p>
       </div>
       <div className='min-h-screen w-full flex flex-col items-center gap-10 justify-center'>
-        <h1 className='font-mirtha text-6xl text-center md:text-8xl mt-4 tracking-wide leading-none bg-gradient-purple text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500 swayam-text'>
+        <h1 className='font-mirtha text-6xl text-center md:text-8xl mt-4 tracking-wide leading-none px-4 bg-gradient-purple text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500 swayam-text'>
           GET READY FOR SWAYAM 2024!
         </h1>
         <div className='w-full px-4 md:w-3/5 overflow-hidden '>
