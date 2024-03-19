@@ -184,6 +184,38 @@ body {
   animation-name: moveYBottomRight;
 }
 
+@media screen and (max-width: 768px) {
+  .blurred-lighting {
+    width: 800px;
+    height: 800px;
+  }
+
+  .top-left {
+    position: absolute;
+    top: 2px;
+    left: -400px;
+    animation-name: moveYTopLeft;
+  }
+  .top-right {
+    position: absolute;
+    top: 2px;
+    right: -400px;
+    animation-name: moveYTopRight;
+  }
+  .bottom-left {
+    position: absolute;
+    bottom: 200px;
+    left: -400px;
+    animation-name: moveYBottomLeft;
+  }
+  .bottom-right {
+    position: absolute;
+    bottom: 2px;
+    right: -400px;
+    animation-name: moveYBottomRight;
+  }
+}
+
 @keyframes moveYTopLeft {
   0% {
     transform: translateY(0) rotate(0deg);
