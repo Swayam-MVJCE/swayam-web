@@ -68,6 +68,15 @@ body {
   background-blend-mode: lighten;
 }
 
+@media screen and (max-width: 768px) {
+  .bg-image {
+    animation: none;
+  }
+  .bg-gradient {
+    animation: none;
+  }
+}
+
 .light-container {
   position: fixed;
   width: 100vw;
@@ -112,6 +121,30 @@ body {
 .swayam-text:hover {
   background-size: 200%;
   background-position-x: -130%;
+}
+
+.swayam-text-animation {
+  width: 100%;
+  animation: swayam-text-animation 3s ease infinite;
+  background-size: 300% 300%;
+  background-clip: text;
+}
+
+@keyframes swayam-text-animation {
+  0% {
+    background-position: 0% 50%;
+    scale: 1;
+    letter-spacing: 8px;
+  }
+  50% {
+    background-position: 100% 50%;
+    letter-spacing: 12px;
+    scale: 101%;
+  }
+  100% {
+    background-position: 0% 50%;
+    letter-spacing: 8px;
+  }
 }
 
 .blurred-lighting {
@@ -226,4 +259,44 @@ body {
 
 .custom-scrollbar::-webkit-scrollbar-track {
   background-color: transparent; /* color of the scroll track */
+}
+
+.main-event {
+  &::after {
+    position: absolute;
+    content: '';
+    top: 70px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 80%;
+    width: 100%;
+    opacity: 40%;
+    border-radius: 20px;
+    transform: scale(1.2) translateZ(0);
+    filter: blur(25px);
+    background: linear-gradient(
+      to left,
+      #ff5770,
+      #e4428d,
+      #c42da8,
+      #9e16c3,
+      #6501de,
+      #9e16c3,
+      #c42da8,
+      #e4428d,
+      #ff5770
+    );
+    background-size: 200% 200%;
+    animation: animateGlow 2s linear infinite;
+  }
+}
+
+@keyframes animateGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
 }

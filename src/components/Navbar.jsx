@@ -15,13 +15,13 @@ const Navbar = () => {
       <Link href='/'>
         <img
           src='/images/mvj-logo.png'
-          className=' h-10 md:h-20 object-fit hover:scale-105 transition duration-200 '
+          className=' h-8 md:h-20 object-fit hover:scale-105 transition duration-200 '
         />
       </Link>
       <Link href='/'>
         <img
           src='/images/swayam-logo.svg'
-          className=' h-10 md:h-14 object-fit hover:scale-105 transition duration-200 '
+          className='h-8 md:h-14 object-fit -ml-5 md:ml-0 hover:scale-105 transition duration-200 '
         />
       </Link>
       <div className='hidden md:flex flex-row items-center justify-evenly gap-6 text-md font-satoshi text-[#D6D6D6]'>
@@ -32,7 +32,7 @@ const Navbar = () => {
           Home
         </Link>
         <Link
-          href='#'
+          href='#featured'
           className='transition hover:text-rose-300 hover:scale-105 duration-300'
         >
           Events
@@ -65,7 +65,7 @@ const Navbar = () => {
       {menuOpen && (
         <div className='md:hidden absolute flex flex-col gap-3 font-satoshi top-20 left-0 bg-black bg-opacity-35 w-full py-6 px-8 rounded-md shadow-md'>
           <Link href='#'>Home</Link>
-          <Link href='#'>Events</Link>
+          <Link href='#featured'>Events</Link>
           <Link href='#'>Contact</Link>
         </div>
       )}
