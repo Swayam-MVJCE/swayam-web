@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator jsonSchema {
+  provider              = "prisma-json-schema-generator"
+  includeRequiredFields = "true"
+}
+
+// datasource db {
+//   provider = "postgresql"
+//   url      = env("DATABASE_URL")
+// }
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Event {
+  id              String    @id @default(uuid())
+  title           String
+  slug            String    @unique
+  description     String
+  judgingCriteria String?
+  rules           String?
+  poster_url      String?
+  date            DateTime?
+  venue           String?
+  registrationFee Float?
+  firstPrize      String?
+  secondPrize     String?
+  category        String?
+
+  @@map("events")
+}

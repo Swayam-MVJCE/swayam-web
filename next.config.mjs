@@ -1,5 +1,15 @@
-import { withNextVideo } from "next-video/process";
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  experimental: {
+    swcPlugins: [
+      [
+        'next-superjson-plugin',
+        {
+          excluded: [],
+        },
+      ],
+    ],
+  },
+};
 
-export default withNextVideo(nextConfig, { folder: 'y' });
+export default nextConfig;
