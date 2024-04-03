@@ -83,6 +83,7 @@ model Event {
   rules           String?
   poster_url      String?
   date            DateTime?
+  time            String?
   venue           String?
   registrationFee Float?
   firstPrize      String?
