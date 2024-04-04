@@ -33,6 +33,7 @@
     "upiqr": "^1.1.1"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.12",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
