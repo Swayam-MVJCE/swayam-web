@@ -17,6 +17,20 @@ const categories = [
 ];
 
 export const revalidate = 1;
+
+export const metadata = {
+  title: 'Events - Swayam 2024',
+  description: 'Explore the latest events of Swayam 2024',
+  images: [
+    {
+      url: '/images/featured-events/kalakshetra.png',
+      width: 1000,
+      height: 1000,
+      alt: 'Events Poster',
+    },
+  ],
+};
+
 export default async function EventsPage({ searchParams }) {
   let selectedCategory;
   let eventsData;
