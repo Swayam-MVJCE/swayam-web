@@ -297,7 +297,7 @@ body {
     z-index: -1;
     height: 80%;
     width: 100%;
-    opacity: 40%;
+    opacity: 50%;
     border-radius: 20px;
     transform: scale(1.2) translateZ(0);
     filter: blur(25px);
