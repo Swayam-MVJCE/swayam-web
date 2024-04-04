@@ -12,7 +12,7 @@ const GuidelinesPage = () => {
         </div>
         <div>
           <h1 className='font-mirtha text-4xl md:text-6xl mt-4 tracking-wide leading-none bg-gradient-purple text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500'>
-            Do's
+            {`Do's`}
           </h1>
           <p className='whitespace-pre text-wrap font-satoshi text-gray-300 leading-relaxed text-lg'>
             <ul className='list-inside list-disc'>
@@ -24,7 +24,7 @@ const GuidelinesPage = () => {
           <br />
           <br />
           <h1 className='font-mirtha text-4xl md:text-6xl mt-4 tracking-wide leading-none bg-gradient-purple text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500'>
-            Don't's
+            {`Don't's`}
           </h1>
           <p className='whitespace-pre text-wrap font-satoshi text-gray-300 leading-relaxed text-lg'>
             <ul className='list-inside list-disc'>
