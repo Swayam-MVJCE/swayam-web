@@ -13,8 +13,11 @@
     "@plaiceholder/next": "^3.0.0",
     "@premieroctet/next-admin": "^3.6.0",
     "@prisma/client": "^5.11.0",
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.12",
+    "lucide-react": "^0.364.0",
     "next": "14.1.0",
     "next-auth": "^4.24.7",
     "next-video": "^0.16.0",
@@ -25,7 +28,8 @@
     "react-fast-marquee": "^1.6.4",
     "react-icons": "^5.0.1",
     "swiper": "^11.0.7",
-    "tailwind-merge": "^2.2.1",
+    "tailwind-merge": "^2.2.2",
+    "tailwindcss-animate": "^1.0.7",
     "upiqr": "^1.1.1"
   },
   "devDependencies": {

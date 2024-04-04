@@ -1,18 +1,21 @@
 /** @type {import('next').NextConfig} */
-import withPlaiceholder from '@plaiceholder/next';
+import withPlaiceholder from "@plaiceholder/next";
 
 const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: 'res.cloudinary.com',
+        hostname: "res.cloudinary.com",
+      },
+      {
+        hostname: "lh3.googleusercontent.com",
       },
     ],
   },
   experimental: {
     swcPlugins: [
       [
-        'next-superjson-plugin',
+        "next-superjson-plugin",
         {
           excluded: [],
         },
