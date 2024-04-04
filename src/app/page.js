@@ -1,11 +1,15 @@
 import FeaturedEventsSlider from '@/components/FeaturedEventsSlider';
+import Footer from '@/components/Footer';
+import GalleryTicker from '@/components/GalleryTicker';
+import Navbar from '@/components/Navbar';
 import ParallaxScroll from '@/components/ParallaxScroll';
 
 export default function Home() {
   return (
     <main className='overflow-x-hidden'>
+      <Navbar />
       <div className='min-h-screen flex flex-col items-center justify-center -mt-20'>
-        <p class='font-mirtha w-fit md:w-full text-9xl text-center md:text-[160px] text-transparent swayam-text-animation tracking-wide leading-none bg-gradient-purple select-none hover:tracking-wider transition-all duration-500 swayam-text'>
+        <p className='font-mirtha w-fit md:w-full text-9xl text-center md:text-[160px] text-transparent swayam-text-animation tracking-wide leading-none bg-gradient-purple select-none hover:tracking-wider transition-all duration-500 swayam-text'>
           YOUR STAGE AWAITS
         </p>
 
@@ -40,6 +44,9 @@ export default function Home() {
         <ParallaxScroll />
       </div>
 
+      <div className='flex min-h-screen flex-row items-center justify-center'>
+        <GalleryTicker />
+      </div>
       <div
         id='featured'
         className='min-h-screen w-full flex flex-col items-center justify-center'
@@ -49,6 +56,15 @@ export default function Home() {
         </h1>
 
         <FeaturedEventsSlider />
+      </div>
+      <Footer />
+      <div className='bg-image'></div>
+      <div className='bg-gradient'></div>
+      <div className='light-container'>
+        <div className='blurred-lighting top-left'></div>
+        <div className='blurred-lighting top-right'></div>
+        <div className='blurred-lighting bottom-left'></div>
+        <div className='blurred-lighting bottom-right'></div>
       </div>
     </main>
   );

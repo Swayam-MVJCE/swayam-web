@@ -1,5 +1,24 @@
-import { withNextVideo } from "next-video/process";
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+import withPlaiceholder from '@plaiceholder/next';
 
-export default withNextVideo(nextConfig, { folder: 'y' });
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        hostname: 'res.cloudinary.com',
+      },
+    ],
+  },
+  experimental: {
+    swcPlugins: [
+      [
+        'next-superjson-plugin',
+        {
+          excluded: [],
+        },
+      ],
+    ],
+  },
+};
+
+export default withPlaiceholder(nextConfig);
