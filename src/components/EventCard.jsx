@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -11,7 +12,10 @@ const EventCard = ({ eventData, featured }) => {
           : 'bg-opacity-10 border-2 border-opacity-65 border-gray-600  hover:border-[rgba(177,125,236,1)]'
       }`}
     >
-      <img src={eventData.poster_url} className='w-full rounded-md' />
+      <div className='w-full aspect-square rounded-lg overflow-hidden relative'>
+        <Image src={eventData.poster_url} className='w-full rounded-md' fill />
+      </div>
+
       <div className='flex flex-col justify-center items-center'>
         <h3 className='font-chamisty text-center leading-none tracking-wide text-[#F8C3F9] hover:text-purple-400 text-2xl mt-3 text-wrap'>
           {eventData.title}

@@ -26,16 +26,22 @@ const Navbar = () => {
       </Link>
       <div className='hidden md:flex flex-row items-center justify-evenly gap-6 text-md font-satoshi text-[#D6D6D6]'>
         <Link
-          href='#'
+          href='/'
           className='transition hover:text-rose-300 hover:scale-105 duration-300'
         >
           Home
         </Link>
         <Link
-          href='#featured'
+          href='/events'
           className='transition hover:text-rose-300 hover:scale-105 duration-300'
         >
           Events
+        </Link>
+        <Link
+          href='/guidelines'
+          className='transition hover:text-rose-300 hover:scale-105 duration-300'
+        >
+          Guidelines
         </Link>
         <Link
           href='#'
@@ -64,8 +70,9 @@ const Navbar = () => {
       </div>
       {menuOpen && (
         <div className='md:hidden absolute flex flex-col gap-3 font-satoshi top-20 left-0 bg-black bg-opacity-35 w-full py-6 px-8 rounded-md shadow-md'>
-          <Link href='#'>Home</Link>
-          <Link href='#featured'>Events</Link>
+          <Link href='/'>Home</Link>
+          <Link href='/events'>Events</Link>
+          <Link href='/guidelines'>Guidelines</Link>
           <Link href='#'>Contact</Link>
         </div>
       )}

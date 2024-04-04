@@ -2,6 +2,7 @@ import MainLayout from '@/components/MainLayout';
 import Image from 'next/image';
 import React from 'react';
 import prisma from '@/utils/client';
+import getBase64BlurUrl from '@/utils/plaiceholder';
 
 export async function generateMetadata({ params }) {
   const { slug } = params;
@@ -50,27 +51,31 @@ const EventPage = async ({ params }) => {
   if (!eventData) {
     return <div>Event not found</div>;
   }
+
+  const posterBlurData = await getBase64BlurUrl(eventData.poster_url);
   return (
     <MainLayout>
-      <main className='px-24 py-12 flex-col flex gap-6 items-center justify-center'>
-        <div className='flex flex-row items-start justify-center gap-8'>
-          <div className='flex flex-row h-full justify-center items-start w-full gap-16 '>
-            <div className='h-[400px] w-[400px] aspect-square rounded-lg overflow-hidden relative hover:scale-105 transition duration-200'>
+      <main className='px-4 md:px-24 py-12 flex-col flex gap-6 items-center justify-center'>
+        <div className='flex flex-col md:flex-row items-start justify-center gap-8'>
+          <div className='flex flex-col md:flex-row h-full justify-center items-start w-full gap-6 md:gap-16 '>
+            <div className='w-full md:h-[400px] md:w-[400px] aspect-square rounded-lg overflow-hidden relative hover:scale-105 transition duration-200'>
               <Image
                 src={
                   eventData.poster_url
                     ? eventData.poster_url
                     : '/images/poster-sample.png'
                 }
+                placeholder='blur'
+                blurDataURL={posterBlurData}
                 fill
               />
             </div>
-            <div className='flex  flex-col basis-1/2 min-h-[400px] justify-between items-start'>
+            <div className='flex  flex-col basis-1/2 md:min-h-[400px] justify-between items-start'>
               <div className='flex-col justify-start items-start'>
-                <h1 className='text-[5.5rem] leading-[0.8] font-mirtha bg-gradient-purple bg-clip-text text-transparent tracking-wide'>
+                <h1 className=' text-6xl md:text-[5.5rem] leading-[0.8] font-mirtha bg-gradient-purple bg-clip-text text-transparent tracking-wide'>
                   {eventData.title}
                 </h1>
-                <h3 className='text-rose-300 font-satoshi text-xl mb-4'>
+                <h3 className='text-rose-300 font-satoshi text-lg md:text-xl mb-4'>
                   {eventData.category}
 
                   <span className='text-gray-400 font-satoshi text-md'>
@@ -83,12 +88,12 @@ const EventPage = async ({ params }) => {
                     - {eventData.time}
                   </span>
                 </h3>
-                <p className='text-gray-300 font-satoshi text-lg leading-tight w-[60%]'>
+                <p className='text-gray-300 font-satoshi text-lg leading-tight md:w-[60%]'>
                   {eventData.description}
                 </p>
-                <div className='flex flex-row gap-1 items-center mt-1'></div>
+                <div className='flex flex-row gap-1 items-center md:mt-1'></div>
               </div>
-              <div className='w-[60%] flex flex-col items-start'>
+              <div className='w-full md:w-[60%] mt-4 flex flex-col items-start'>
                 <div className='flex flex-col gap-1 w-full'>
                   <div className='flex flex-row gap-1 items-center text-white'>
                     <img src='/images/location-icon.svg' alt='venue' />
@@ -126,15 +131,16 @@ const EventPage = async ({ params }) => {
             </div>
           </div>
         </div>
-        <div className='w-[90%] flex flex-col items-start  backdrop-blur-md p-8 rounded-lg'>
-          <h1 className='font-mirtha text-center text-6xl mt-4 tracking-wide leading-none bg-gradient-purple text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500'>
+        <div className='md:w-[90%] flex flex-col items-start overflow-hidden flex-wrap  backdrop-blur-md px-2 md:p-8 rounded-lg'>
+          <h1 className='font-mirtha text-center text-5xl md:text-6xl mt-4 tracking-wide leading-none bg-gradient-purple text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500'>
             Event Rules
           </h1>
-          <p className='whitespace-pre font-satoshi text-gray-300 leading-relaxed text-lg'>{`${eventData.rules}`}</p>
-          <h1 className='font-mirtha text-center text-6xl mt-4 tracking-wide leading-none bg-gradient-purple text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500'>
+          <p className='whitespace-pre font-satoshi text-wrap text-gray-300 leading-relaxed text-lg'>{`${eventData.rules}`}</p>
+          <h1 className='font-mirtha text-center text-5xl md:text-6xl mt-4 tracking-wide leading-none bg-gradient-purple text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500'>
             Judging Criteria
           </h1>
-          <p className='whitespace-pre font-satoshi text-gray-300 leading-relaxed text-lg'>{`${eventData.judgingCriteria}`}</p>
+          <p className='whitespace-pre font-satoshi text-gray-300 leading-relaxed text-lg'>{`${eventData.judgingCriteria}
+          `}</p>
         </div>
       </main>
     </MainLayout>

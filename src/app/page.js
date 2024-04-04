@@ -1,5 +1,6 @@
 import FeaturedEventsSlider from '@/components/FeaturedEventsSlider';
 import Footer from '@/components/Footer';
+import GalleryTicker from '@/components/GalleryTicker';
 import Navbar from '@/components/Navbar';
 import ParallaxScroll from '@/components/ParallaxScroll';
 
@@ -43,6 +44,9 @@ export default function Home() {
         <ParallaxScroll />
       </div>
 
+      <div className='flex min-h-screen flex-row items-center justify-center'>
+        <GalleryTicker />
+      </div>
       <div
         id='featured'
         className='min-h-screen w-full flex flex-col items-center justify-center'

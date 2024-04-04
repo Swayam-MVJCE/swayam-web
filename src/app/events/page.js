@@ -70,7 +70,7 @@ export default async function EventsPage({ searchParams }) {
             style={{
               backgroundSize: '70%',
             }}
-            className='font-mirtha text-center text-8xl mt-4 tracking-wide leading-none bg-gradient-purple text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500'
+            className='font-mirtha text-center text-7xl md:text-8xl mt-4 tracking-wide leading-none bg-gradient-purple text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500'
           >
             EXPLORE EVENTS
           </h1>

@@ -9,7 +9,9 @@ const MainEventCard = ({ date, title, organizer, image, href }) => {
         <h3 className='font-chamisty  bg-gradient-purple text-transparent bg-clip-text text-center text-3xl mt-3'>
           {title}
         </h3>
-        {/* <h3 className='font-satoshi text-gray-400 text-sm'>{date}</h3> */}
+        <h3 className='font-satoshi text-center text-gray-300 text-lg'>
+          Mega Event
+        </h3>
       </div>
     </MainPinContainer>
   );
