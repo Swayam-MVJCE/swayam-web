@@ -241,6 +241,24 @@
             "string",
             "null"
           ]
+        },
+        "isGroup": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "minParticipants": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "maxParticipants": {
+          "type": [
+            "integer",
+            "null"
+          ]
         }
       },
       "required": [
