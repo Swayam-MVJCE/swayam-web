@@ -89,6 +89,9 @@ model Event {
   firstPrize      String?
   secondPrize     String?
   category        String?
-
+  isGroup         Boolean?
+  minParticipants Int?
+  maxParticipants Int?
+  participants    String[]
   @@map("events")
 }
