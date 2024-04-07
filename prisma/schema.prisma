@@ -92,6 +92,6 @@ model Event {
   isGroup         Boolean?
   minParticipants Int?
   maxParticipants Int?
-
+  participants    String[]
   @@map("events")
 }
