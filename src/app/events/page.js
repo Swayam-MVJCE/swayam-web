@@ -63,43 +63,41 @@ export default async function EventsPage({ searchParams }) {
     console.error(error);
   }
   return (
-    <main className=''>
-      <MainLayout>
-        <div className='flex flex-col w-full'>
-          <h1
-            style={{
-              backgroundSize: '70%',
-            }}
-            className='font-mirtha text-center text-7xl md:text-8xl mt-4 tracking-wide leading-none bg-gradient-purple text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500'
-          >
-            EXPLORE EVENTS
-          </h1>
-          <div className='flex flex-row w-screen px-4 py-2 justify-start md:justify-center flex-nowrap overflow-x-scroll md:overflow-x-hidden'>
-            {categories &&
-              categories.map((category) => (
-                <Link
-                  href={`/events?category=${category}`}
-                  key={category}
-                  className={`px-4 py-1 bg-gray-400 bg-opacity-15 text-nowrap border-gray-400 border border-opacity-40 cursor-pointer font-satoshi backdrop-blur-sm rounded-xl m-2 hover:bg-gradient-purple transition-all duration-500 hover:scale-105 ${
-                    category === selectedCategory ? 'bg-gradient-purple' : ''
-                  }`}
-                >
-                  {category}
-                </Link>
-              ))}
-          </div>
-          <div className='flex flex-row flex-wrap py-5 px-4 md:px-40 grid-cols-1 md:grid-cols-3 gap-8 items-stretch w-full justify-center'>
-            {eventsData &&
-              eventsData.map((event) =>
-                event.category === 'Main Event' ? (
-                  <EventCard key={event.id} eventData={event} featured={true} />
-                ) : (
-                  <EventCard key={event.id} eventData={event} />
-                )
-              )}
-          </div>
+    <MainLayout>
+      <div className="flex flex-col w-full">
+        <h1
+          style={{
+            backgroundSize: '70%',
+          }}
+          className="font-mirtha text-center text-7xl md:text-8xl mt-4 tracking-wide leading-none bg-gradient-purple text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500"
+        >
+          EXPLORE EVENTS
+        </h1>
+        <div className="flex flex-row w-screen px-4 py-2 justify-start md:justify-center flex-nowrap overflow-x-scroll md:overflow-x-hidden">
+          {categories &&
+            categories.map((category) => (
+              <Link
+                href={`/events?category=${category}`}
+                key={category}
+                className={`px-4 py-1 bg-gray-400 bg-opacity-15 text-nowrap border-gray-400 border border-opacity-40 cursor-pointer font-satoshi backdrop-blur-sm rounded-xl m-2 hover:bg-gradient-purple transition-all duration-500 hover:scale-105 ${
+                  category === selectedCategory ? 'bg-gradient-purple' : ''
+                }`}
+              >
+                {category}
+              </Link>
+            ))}
         </div>
-      </MainLayout>
-    </main>
+        <div className="flex flex-row flex-wrap py-5 px-4 md:px-40 grid-cols-1 md:grid-cols-3 gap-8 items-stretch w-full justify-center">
+          {eventsData &&
+            eventsData.map((event) =>
+              event.category === 'Main Event' ? (
+                <EventCard key={event.id} eventData={event} featured={true} />
+              ) : (
+                <EventCard key={event.id} eventData={event} />
+              )
+            )}
+        </div>
+      </div>
+    </MainLayout>
   );
 }

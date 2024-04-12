@@ -75,9 +75,9 @@ model VerificationToken {
 }
 
 model Event {
-  id              String    @id @default(uuid())
+  id              String         @id @default(uuid())
   title           String
-  slug            String    @unique
+  slug            String         @unique
   description     String
   judgingCriteria String?
   rules           String?
@@ -89,9 +89,35 @@ model Event {
   firstPrize      String?
   secondPrize     String?
   category        String?
-  isGroup         Boolean?
-  minParticipants Int?
-  maxParticipants Int?
-  participants    String[]
+  isGroup         Boolean?       @default(false)
+  minParticipants Int?           @default(1)
+  maxParticipants Int?           @default(1)
+  registrations   Registration[]
+
   @@map("events")
+}
+
+model Registration {
+  id                  String        @id @default(cuid())
+  eventId             String
+  userId              String?
+  email               String?
+  name                String
+  phone               String
+  collegeName         String
+  noOfParticipants    Int?
+  participants        String?       @db.Text
+  paymentVerification PaymentStatus @default(PENDING)
+  paymentAmount       Float?
+  paymentId           String?
+  screenshotUrl       String?
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+  event               Event         @relation(fields: [eventId], references: [id], onDelete: Cascade)
+}
+
+enum PaymentStatus {
+  PENDING
+  VERIFIED
+  FAILED
 }

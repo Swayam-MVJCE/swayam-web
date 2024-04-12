@@ -7,7 +7,6 @@ export const authOptions = {
   secret: process.env.AUTH_SECRET,
   pages: {
     signIn: '/login',
-    error: '/login',
   },
   providers: [
     GoogleProvider({
@@ -16,6 +15,12 @@ export const authOptions = {
     }),
   ],
   adapter: PrismaAdapter(prisma),
+  callbacks: {
+    session: async ({ session, user }) => {
+      session.user.id = user.id;
+      return session;
+    },
+  },
 };
 
 const handler = NextAuth(authOptions);

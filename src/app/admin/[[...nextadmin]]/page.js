@@ -13,6 +13,7 @@ import {
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
+import ViewScreenshotButton from '@/components/ViewScreenshotButton';
 
 export default async function AdminPage({ params, searchParams }) {
   const session = await getServerSession(authOptions);
@@ -24,10 +25,10 @@ export default async function AdminPage({ params, searchParams }) {
   });
   if (!user || !user.role || user.role !== 'ADMIN') {
     return (
-      <div className='w-screen h-screen text-2xl flex flex-col items-center justify-center text-black'>
+      <div className="w-screen h-screen text-2xl flex flex-col items-center justify-center text-black">
         <h1>Access Denied</h1>
         <p>You need to be an admin to access this page.</p>
-        <Link href='/' className='underline text-blue-400'>
+        <Link href="/" className="underline text-blue-400">
           Go back to home
         </Link>
       </div>
@@ -40,20 +41,52 @@ export default async function AdminPage({ params, searchParams }) {
       basePath: '/admin',
       model: {
         Event: {
+          toString: (event) => `${event.title}`,
           title: 'Event',
           edit: {
+            display: [
+              'slug',
+              'title',
+              'description',
+              'judgingCriteria',
+              'rules',
+              'firstPrize',
+              'secondPrize',
+              'registrationFee',
+              'minParticipants',
+              'maxParticipants',
+              'time',
+              'date',
+              'venue',
+              'category',
+              'isGroup',
+            ],
             fields: {
               judgingCriteria: {
-                format: 'richtext-html',
+                format: 'textarea',
               },
               rules: {
-                format: 'richtext-html',
+                format: 'textarea',
               },
             },
           },
         },
         User: {
+          toString: (item) => item.name,
           title: 'User',
+        },
+        Registration: {
+          title: 'Registrations',
+          edit: {
+            fields: {
+              participants: {
+                format: 'textarea',
+              },
+              screenshotUrl: {
+                input: <ViewScreenshotButton />,
+              },
+            },
+          },
         },
       },
     },
@@ -65,7 +98,7 @@ export default async function AdminPage({ params, searchParams }) {
   });
 
   return (
-    <div className='w-screen h-full text-black'>
+    <div className="w-screen h-full text-black">
       <NextAdmin {...props} />
     </div>
   );
