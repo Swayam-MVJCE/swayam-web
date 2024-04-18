@@ -15,6 +15,9 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+.bg-move-right:hover {
+  background-position: right center;
+}
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -29,23 +32,22 @@ body {
 .bg-image {
   position: fixed;
   top: 0;
-  background-image: url('/bg-overlay.png');
+  background-image: url('/bg-1.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
   height: 100vh;
-  animation: bg-overlay infinite 10s alternate-reverse;
+  /* animation: bg-overlay infinite 10s alternate-reverse; */
   z-index: -2;
-  background-blend-mode: lighten;
 }
 
 .bg-gradient {
   position: fixed;
   top: 0;
   background: rgb(8, 0, 14);
-  background: linear-gradient(0deg, rgb(25, 0, 46) 0%, rgb(88, 0, 129) 100%);
+  background: linear-gradient(0deg, rgb(16, 0, 30) 30%, rgb(123, 0, 180) 120%);
   height: 100dvh;
   background-position: center;
   background-repeat: no-repeat;
@@ -53,9 +55,9 @@ body {
   background-size: cover;
   max-width: 100dvw;
   width: 100%;
-  z-index: -3;
+  z-index: -2;
+  opacity: 0.6;
   animation: bg-gradient-overlay 5s infinite alternate;
-  background-blend-mode: lighten;
 }
 
 @media screen and (max-width: 768px) {

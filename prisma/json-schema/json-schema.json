@@ -246,25 +246,120 @@
           "type": [
             "boolean",
             "null"
-          ]
+          ],
+          "default": false
         },
         "minParticipants": {
           "type": [
             "integer",
             "null"
-          ]
+          ],
+          "default": 1
         },
         "maxParticipants": {
           "type": [
             "integer",
             "null"
-          ]
+          ],
+          "default": 1
+        },
+        "registrations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Registration"
+          }
         }
       },
       "required": [
         "title",
         "slug",
         "description"
+      ]
+    },
+    "Registration": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "userId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "email": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "collegeName": {
+          "type": "string"
+        },
+        "noOfParticipants": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "participants": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "paymentVerification": {
+          "type": "string",
+          "default": "PENDING",
+          "enum": [
+            "PENDING",
+            "VERIFIED",
+            "FAILED"
+          ]
+        },
+        "paymentAmount": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "paymentId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "screenshotUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "event": {
+          "$ref": "#/definitions/Event"
+        }
+      },
+      "required": [
+        "eventId",
+        "name",
+        "phone",
+        "collegeName",
+        "updatedAt"
       ]
     }
   },
@@ -284,6 +379,9 @@
     },
     "event": {
       "$ref": "#/definitions/Event"
+    },
+    "registration": {
+      "$ref": "#/definitions/Registration"
     }
   }
 }

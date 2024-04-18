@@ -2,6 +2,9 @@ import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 import Providers from './provider';
+import { ToastContainer, toast } from 'react-toastify';
+import NextTopLoader from 'nextjs-toploader';
+import 'react-toastify/dist/ReactToastify.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -31,11 +34,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <body
         className={`${inter.variable} ${mirthaDisplay.variable} ${satoshi.variable} ${chamisty.variable} overflow-x-hidden`}
       >
+        <NextTopLoader color="#c800ff" />
         <Providers>{children}</Providers>
+        <ToastContainer />
       </body>
     </html>
   );
