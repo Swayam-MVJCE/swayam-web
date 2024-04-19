@@ -15,6 +15,64 @@ import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import ViewScreenshotButton from '@/components/ViewScreenshotButton';
 
+export const options = {
+  basePath: '/admin',
+  model: {
+    Event: {
+      toString: (event) => `${event.title}`,
+      title: 'Event',
+      edit: {
+        display: [
+          'slug',
+          'title',
+          'description',
+          'judgingCriteria',
+          'rules',
+          'firstPrize',
+          'secondPrize',
+          'registrationFee',
+          'minParticipants',
+          'maxParticipants',
+          'time',
+          'date',
+          'venue',
+          'category',
+          'isGroup',
+        ],
+        fields: {
+          judgingCriteria: {
+            format: 'textarea',
+          },
+          rules: {
+            format: 'textarea',
+          },
+        },
+      },
+    },
+    User: {
+      toString: (item) => item.name,
+      title: 'User',
+    },
+    Registration: {
+      title: 'Registrations',
+      edit: {
+        fields: {
+          participants: {
+            format: 'textarea',
+          },
+          screenshotUrl: {
+            input: <ViewScreenshotButton />,
+          },
+        },
+      },
+    },
+  },
+  pages: {
+    '/export-registrations': {
+      title: 'Export Registrations',
+    },
+  },
+};
 export default async function AdminPage({ params, searchParams }) {
   const session = await getServerSession(authOptions);
   if (!session) {
@@ -37,59 +95,7 @@ export default async function AdminPage({ params, searchParams }) {
   const props = await getPropsFromParams({
     params: params.nextadmin,
     searchParams,
-    options: {
-      basePath: '/admin',
-      model: {
-        Event: {
-          toString: (event) => `${event.title}`,
-          title: 'Event',
-          edit: {
-            display: [
-              'slug',
-              'title',
-              'description',
-              'judgingCriteria',
-              'rules',
-              'firstPrize',
-              'secondPrize',
-              'registrationFee',
-              'minParticipants',
-              'maxParticipants',
-              'time',
-              'date',
-              'venue',
-              'category',
-              'isGroup',
-            ],
-            fields: {
-              judgingCriteria: {
-                format: 'textarea',
-              },
-              rules: {
-                format: 'textarea',
-              },
-            },
-          },
-        },
-        User: {
-          toString: (item) => item.name,
-          title: 'User',
-        },
-        Registration: {
-          title: 'Registrations',
-          edit: {
-            fields: {
-              participants: {
-                format: 'textarea',
-              },
-              screenshotUrl: {
-                input: <ViewScreenshotButton />,
-              },
-            },
-          },
-        },
-      },
-    },
+    options: options,
     prisma,
     schema,
     action: submitFormAction,

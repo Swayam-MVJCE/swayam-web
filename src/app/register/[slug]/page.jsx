@@ -7,6 +7,8 @@ import { getServerSession } from 'next-auth';
 import upiqr from 'upiqr';
 import Link from 'next/link';
 
+export const dynamic = 'force-dynamic';
+
 const RegistrationPage = async ({ params }) => {
   const { slug } = params;
   let event;
