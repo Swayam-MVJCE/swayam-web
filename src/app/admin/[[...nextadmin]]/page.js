@@ -55,6 +55,32 @@ export const options = {
     },
     Registration: {
       title: 'Registrations',
+      list: {
+        fields: {
+          event: {
+            formatter: (event) => event.title,
+          },
+          createdAt: {
+            formatter: (date) => new Date(date).toUTCString(),
+          },
+        },
+        display: [
+          'id',
+          'name',
+          'collegeName',
+          'paymentVerification',
+          'paymentId',
+          'event',
+          'phone',
+          'noOfParticipants',
+          'paymentAmount',
+          'createdAt',
+        ],
+        defaultSort: {
+          field: 'createdAt',
+          direction: 'desc',
+        },
+      },
       edit: {
         fields: {
           participants: {
