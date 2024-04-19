@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
-const mirthaDisplay = localFont({
+export const mirthaDisplay = localFont({
   src: '../../public/fonts/mirtha-display.woff2',
   display: 'swap',
   variable: '--font-mirtha',
