@@ -34,7 +34,7 @@ export default function Home() {
             loop
           >
             <source
-              src="https://res.cloudinary.com/dthmnj96x/video/upload/v1710348215/teaser_woja4e.mp4"
+              src="https://res.cloudinary.com/dthmnj96x/video/upload/v1713616219/videos/swayam-promo_jql7b7.mp4"
               type="video/mp4"
             />
           </video>
@@ -51,7 +51,7 @@ export default function Home() {
         id="featured"
         className="min-h-screen w-full flex flex-col items-center justify-center"
       >
-        <h1 className="font-mirtha text-center text-8xl mt-4 tracking-wide leading-none bg-gradient-purple text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500 swayam-text">
+        <h1 className="font-mirtha text-center text-8xl mt-4 tracking-wide leading-none bg-white text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500 swayam-text">
           FEATURED EVENTS
         </h1>
 
