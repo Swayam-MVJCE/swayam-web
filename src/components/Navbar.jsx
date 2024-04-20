@@ -55,10 +55,16 @@ const Navbar = () => {
           Guidelines
         </Link>
         <Link
-          href="#"
+          href="/contact"
           className="transition hover:text-rose-300 hover:scale-105 duration-300"
         >
           Contact
+        </Link>
+        <Link
+          href="/about-swayam"
+          className="transition hover:text-rose-300 hover:scale-105 duration-300"
+        >
+          About
         </Link>
         {session ? (
           <>
@@ -161,7 +167,8 @@ const Navbar = () => {
               <Link href="/">Home</Link>
               <Link href="/events">Events</Link>
               <Link href="/guidelines">Guidelines</Link>
-              <Link href="#">Contact</Link>
+              <Link href="/contact">Contact</Link>
+              <Link href="/about-swayam">About</Link>
               <button
                 className="text-start"
                 onClick={() => signOut({ callbackUrl: '/' })}

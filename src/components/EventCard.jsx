@@ -8,19 +8,19 @@ const EventCard = ({ eventData, featured }) => {
       href={'/events/' + eventData.slug}
       className={`flex cursor-pointer flex-col items-center rounded-xl w-[20rem] hover:scale-105 transition duration-500 bg-gray-400  p-2 backdrop-blur-sm hover:shadow-purple-600 shadow-xl ${
         featured
-          ? 'main-event bg-opacity-35 bg-gray-700 border-2 border-opacity-65 border-[rgba(177,125,236,1)]'
+          ? 'main-event basis-full bg-opacity-35 bg-gray-700 border-2 border-opacity-65 border-[rgba(177,125,236,1)]'
           : 'bg-opacity-10 border-2 border-opacity-65 border-gray-600  hover:border-[rgba(177,125,236,1)]'
       }`}
     >
-      <div className='w-full aspect-square rounded-lg overflow-hidden relative'>
-        <Image src={eventData.poster_url} className='w-full rounded-md' fill />
+      <div className="w-full aspect-square rounded-lg overflow-hidden relative">
+        <Image src={eventData.poster_url} className="w-full rounded-md" fill />
       </div>
 
-      <div className='flex flex-col justify-center items-center'>
-        <h3 className='font-chamisty text-center leading-none tracking-wide text-[#F8C3F9] hover:text-purple-400 text-2xl mt-3 text-wrap'>
+      <div className="flex flex-col justify-center items-center">
+        <h3 className="font-chamisty text-center leading-none tracking-wide text-[#F8C3F9] hover:text-purple-400 text-2xl mt-3 text-wrap">
           {eventData.title}
         </h3>
-        <h3 className='font-satoshi  text-gray-400 text-base'>
+        <h3 className="font-satoshi  text-gray-400 text-base">
           {eventData.category}
         </h3>
       </div>

@@ -41,6 +41,7 @@ body {
   height: 100vh;
   /* animation: bg-overlay infinite 10s alternate-reverse; */
   z-index: -2;
+  filter: blur(5px);
 }
 
 .bg-gradient {
@@ -286,7 +287,7 @@ body {
 }
 
 .main-event {
-  &::after {
+  &::before {
     position: absolute;
     content: '';
     top: 70px;
@@ -313,6 +314,12 @@ body {
     );
     background-size: 200% 200%;
     animation: animateGlow 2s linear infinite;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main-event::before {
+    opacity: 0.2;
   }
 }
 
