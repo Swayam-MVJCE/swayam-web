@@ -31,7 +31,7 @@ const Contact = () => {
                     </a>
                   </p>
                   <p className="mt-2 text-white">
-                    Nathasha D'souza -{' '}
+                    Nathasha D&apos;souza -{' '}
                     <a
                       href="tel:+917337769676"
                       className="underline font-bold text-fuchsia-500 hover:text-pink-400"
