@@ -6,18 +6,18 @@ import { GrYoutube } from 'react-icons/gr';
 const Contact = () => {
   return (
     <MainLayout>
-      <section className="h-screen snap-start shrink-0 z-10">
+      <section className="min-h-screen snap-start shrink-0 z-10 py-10 font-satoshi px-4 md:px-20">
         <div className="flex flex-col items-start justify-center w-full mt-8"></div>
         <article className="flex items-center justify-center mt-6">
-          <div className="flex flex-col justify-center w-full gap-10 bg-white bg-opacity-5 backdrop-blur-sm border h-full border-gray-700 rounded-lg p-14">
+          <div className="flex flex-col justify-center w-full gap-10 bg-white bg-opacity-5 backdrop-blur-sm border h-full border-gray-700 rounded-lg p-6 md:p-14">
             <div className="text-left text-white text-5xl font-medium mb-9">
-              <span className="absolute top-0 left-0 mt-10 ml-10 underline decoration-purple-500">
-                Contact us:
+              <span className="absolute font-mirtha text-7xl top-0 left-0 my-6 ml-10">
+                Contact us
               </span>
             </div>
             <div className="flex flex-col items-center justify-center text-left w-full text-xl">
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
-                <div className="flex flex-col items-center justify-center p-4 text-center bg-black rounded-lg">
+                <div className="flex flex-col items-center justify-center p-4 text-center bg-black/60 rounded-lg">
                   <h3 className="text-xl font-medium text-white underline decoration-purple-500  top-0">
                     Chief Co-ordinator:
                   </h3>
@@ -40,7 +40,7 @@ const Contact = () => {
                     </a>
                   </p>
                 </div>
-                <div className="flex flex-col items-center justify-center p-4 text-center bg-black rounded-lg">
+                <div className="flex flex-col items-center justify-center p-4 text-center bg-black/60 rounded-lg">
                   <h3 className="text-xl font-medium text-white underline decoration-purple-500 top-0">
                     Core Team Handling:
                   </h3>
@@ -81,7 +81,7 @@ const Contact = () => {
                     </a>
                   </p>
                 </div>
-                <div className="flex flex-col items-center justify-center p-4 text-center bg-black rounded-lg">
+                <div className="flex flex-col items-center justify-center p-4 text-center bg-black/60 rounded-lg">
                   <h3 className="text-xl font-medium text-white underline decoration-purple-500">
                     Events related Query:
                   </h3>
@@ -104,7 +104,7 @@ const Contact = () => {
                     </a>
                   </p>
                 </div>
-                <div className="flex flex-col items-center justify-center p-4 text-center bg-black rounded-lg">
+                <div className="flex flex-col items-center justify-center p-4 text-center bg-black/60 rounded-lg">
                   <h3 className="text-xl font-medium text-white underline decoration-purple-500">
                     Registration Queries:
                   </h3>
@@ -127,7 +127,7 @@ const Contact = () => {
                     </a>
                   </p>
                 </div>
-                <div className="flex flex-col items-center justify-center p-4 text-center bg-black rounded-lg">
+                <div className="flex flex-col items-center justify-center p-4 text-center bg-black/60 rounded-lg">
                   <h3 className="text-xl font-medium text-white underline decoration-purple-500">
                     Hospitality:
                   </h3>
@@ -150,7 +150,7 @@ const Contact = () => {
                     </a>
                   </p>
                 </div>
-                <div className="flex flex-col items-center justify-center p-4 text-center bg-black rounded-lg">
+                <div className="flex flex-col items-center justify-center p-4 text-center bg-black/60 rounded-lg">
                   <h3 className="text-xl font-medium text-white underline decoration-purple-500">
                     Website support:
                   </h3>
@@ -182,7 +182,7 @@ const Contact = () => {
                     </a>
                   </p>
                 </div>
-                <div className="flex flex-col items-center justify-center p-4 text-center bg-black rounded-lg">
+                <div className="flex flex-col items-center justify-center p-4 text-center bg-black/60 rounded-lg">
                   <h3 className="text-xl font-medium text-white underline decoration-purple-500">
                     Accomodation:
                   </h3>
@@ -196,7 +196,7 @@ const Contact = () => {
                     </a>
                   </p>
                 </div>
-                <div className="flex flex-col items-center justify-center p-4 text-center bg-black rounded-lg">
+                <div className="flex flex-col items-center justify-center p-4 text-center bg-black/60 rounded-lg">
                   <h3 className="text-xl font-medium text-white underline decoration-purple-500">
                     Faculty Co-ordinator:
                   </h3>
@@ -233,10 +233,9 @@ const Contact = () => {
                     <TbMapPinFilled size={45} />
                   </a>
                 </div>
-                <div class="h-6 w-px bg-white"></div>
               </div>
               <p class="text-white font-semibold text-lg tracking-wider hover:text-purple-400 transition duration-200  mt-3">
-                Reach us out
+                Swayam 2024 | Your Stage Awaits
               </p>
             </div>
           </div>
