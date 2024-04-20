@@ -136,7 +136,7 @@ const EventPage = async ({ params }) => {
             </div>
           </div>
         </div>
-        <div className="md:w-[90%] flex flex-col items-start overflow-hidden flex-wrap  backdrop-blur-md px-2 md:p-8 rounded-lg">
+        <div className="md:w-[90%] flex flex-col items-start overflow-hidden flex-wrap  px-2 md:p-8 rounded-lg">
           <h1 className="font-mirtha text-center text-5xl md:text-6xl mt-4 tracking-wide leading-none bg-gradient-purple text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500">
             Event Rules
           </h1>

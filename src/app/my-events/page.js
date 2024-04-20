@@ -18,14 +18,12 @@ const MyEventsPage = async () => {
 
   const myRegistrations = await prisma.registration.findMany({
     where: {
-      userId: session.userId,
+      userId: session.user.id,
     },
     include: {
       event: true,
     },
   });
-
-  console.log(myRegistrations);
 
   return (
     <MainLayout>
@@ -60,8 +58,9 @@ const MyEventsPage = async () => {
                     Event Rules
                   </Link>
                   <Link
+                    target="_blank"
                     className="px-4 flex items-center justify-center gap-2 py-2 w-full bg-gray-400 bg-opacity-15 text-nowrap border-gray-400 border border-opacity-40 cursor-pointer font-satoshi backdrop-blur-sm rounded-xl hover:bg-gradient-purple transition-all duration-500 hover:scale-105"
-                    href="/events"
+                    href={`/ticket/${registration.id}`}
                   >
                     <HiTicket size={22} />
                     View E-Ticket

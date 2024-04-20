@@ -1,5 +1,6 @@
 import EventCard from '@/components/EventCard';
 import FeaturedEventCard from '@/components/FeaturedEventCard';
+import FeaturedKalakshetraCard from '@/components/FeaturedKalakshetraCard';
 import MainEventCard from '@/components/MainEventCard';
 import MainLayout from '@/components/MainLayout';
 import prisma from '@/utils/client';
@@ -69,7 +70,7 @@ export default async function EventsPage({ searchParams }) {
           style={{
             backgroundSize: '70%',
           }}
-          className="font-mirtha text-center text-7xl md:text-8xl mt-4 tracking-wide leading-none bg-gradient-purple text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500"
+          className="font-mirtha text-center text-7xl md:text-8xl mt-4 tracking-wide leading-none bg-white text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500"
         >
           EXPLORE EVENTS
         </h1>
@@ -91,7 +92,11 @@ export default async function EventsPage({ searchParams }) {
           {eventsData &&
             eventsData.map((event) =>
               event.category === 'Main Event' ? (
-                <EventCard key={event.id} eventData={event} featured={true} />
+                <FeaturedKalakshetraCard
+                  key={event.id}
+                  eventData={event}
+                  featured={true}
+                />
               ) : (
                 <EventCard key={event.id} eventData={event} />
               )
