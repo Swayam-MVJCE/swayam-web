@@ -2,12 +2,14 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useController, useForm } from 'react-hook-form';
+import { useFieldArray } from 'react-hook-form';
+import { CiCirclePlus } from 'react-icons/ci';
+import { CiCircleMinus } from 'react-icons/ci';
 
 import Link from 'next/link';
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -40,6 +42,11 @@ const EventRegistrationForm = ({ event, session, qr }) => {
       utrNumber: '',
       screenshot: null,
     },
+  });
+
+  const { fields, append, remove } = useFieldArray({
+    control: form.control,
+    name: 'participants',
   });
 
   const registrationSubmitWithMeta = registrationSubmit.bind(null, {
@@ -150,7 +157,14 @@ const EventRegistrationForm = ({ event, session, qr }) => {
                 <FormField
                   control={form.control}
                   name="noOfParticipants"
-                  render={({ field }) => (
+                  rules={{
+                    required: true,
+                    validate: (value) =>
+                      (value >= event.minParticipants &&
+                        value <= event.maxParticipants) ||
+                      'Number of participants must be within the specified range.',
+                  }}
+                  render={({ field, fieldState: { error } }) => (
                     <FormItem>
                       <FormLabel>
                         No of team members (Min: {event.minParticipants}, Max:{' '}
@@ -160,34 +174,53 @@ const EventRegistrationForm = ({ event, session, qr }) => {
                         <Input type="number" required className="" {...field} />
                       </FormControl>
 
-                      <FormMessage />
+                      {error && <FormMessage error={error.message} />}
                     </FormItem>
                   )}
                 />
 
-                <FormField
-                  control={form.control}
-                  name="participants"
-                  render={({ field }) => (
-                    <FormItem>
-                      <div className="flex flex-col gap-3">
-                        <FormLabel>Team Members</FormLabel>
-                        <FormControl>
-                          <textarea
-                            className="text-white bg-gray-600 bg-opacity-40 backdrop-blur-sm border border-gray-500 rounded-md p-2"
-                            placeholder="Participant 1 Name - Phone Number"
-                            rows={5}
-                            {...field}
-                          />
-                        </FormControl>
+                {event.isGroup && (
+                  <>
+                    <FormLabel>Team Members</FormLabel>
+                    {fields.map((item, index) => (
+                      <div key={item.id}>
+                        <FormField
+                          control={form.control}
+                          name={`participants[${index}].name`}
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormControl>
+                                <Input
+                                  className=""
+                                  {...field}
+                                  placeholder={`Participant ${
+                                    index + 1
+                                  } - Contact Number`}
+                                />
+                              </FormControl>
+                              <button
+                                type="button"
+                                onClick={() => remove(index)}
+                              >
+                                Remove Participant
+                              </button>
+                            </FormItem>
+                          )}
+                        />
                       </div>
-                      <FormDescription className="">
-                        Enter the names of all team members sepearted by commas.
-                      </FormDescription>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                    ))}
+                    <button
+                      type="button"
+                      onClick={() => append({ name: '' })}
+                      disabled={
+                        !form.watch('noOfParticipants') ||
+                        fields.length >= form.watch('noOfParticipants')
+                      }
+                    >
+                      Add Participant
+                    </button>
+                  </>
+                )}
               </>
             )}{' '}
             {!event.isGroup && !isMobile && (
