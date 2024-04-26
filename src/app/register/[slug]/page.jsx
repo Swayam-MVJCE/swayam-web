@@ -39,27 +39,27 @@ const RegistrationPage = async ({ params }) => {
     },
   });
 
-  // if (registration) {
-  //   return (
-  //     <MainLayout>
-  //       <div className="w-screen h-screen p-8 font-satoshi flex flex-col items-center justify-start text-white">
-  //         <h1 className="text-3xl font-bold">
-  //           You have already registered for this event.
-  //         </h1>
-  //         <p>
-  //           Unfortunately, you cannot register for the same event more than
-  //           once.
-  //         </p>
-  //         <Link
-  //           href="/"
-  //           className="px-4 py-1 bg-gray-400 bg-opacity-15 text-nowrap border-gray-400 border border-opacity-40 cursor-pointer font-satoshi backdrop-blur-sm rounded-xl m-2 hover:bg-gradient-purple transition-all duration-500 hover:scale-105"
-  //         >
-  //           Go back to home
-  //         </Link>
-  //       </div>
-  //     </MainLayout>
-  //   );
-  // }
+  if (registration) {
+    return (
+      <MainLayout>
+        <div className="w-screen h-screen p-8 font-satoshi flex flex-col items-center justify-start text-white">
+          <h1 className="text-3xl font-bold">
+            You have already registered for this event.
+          </h1>
+          <p>
+            Unfortunately, you cannot register for the same event more than
+            once.
+          </p>
+          <Link
+            href="/"
+            className="px-4 py-1 bg-gray-400 bg-opacity-15 text-nowrap border-gray-400 border border-opacity-40 cursor-pointer font-satoshi backdrop-blur-sm rounded-xl m-2 hover:bg-gradient-purple transition-all duration-500 hover:scale-105"
+          >
+            Go back to home
+          </Link>
+        </div>
+      </MainLayout>
+    );
+  }
 
   const qr = await upiqr({
     payeeVPA: 'EzE0046709@CUB',
