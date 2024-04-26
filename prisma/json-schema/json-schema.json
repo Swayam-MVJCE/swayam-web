@@ -310,10 +310,10 @@
           ]
         },
         "participants": {
-          "type": [
-            "string",
-            "null"
-          ]
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Participant"
+          }
         },
         "paymentVerification": {
           "type": "string",
@@ -361,6 +361,28 @@
         "collegeName",
         "updatedAt"
       ]
+    },
+    "Participant": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "registration": {
+          "$ref": "#/definitions/Registration"
+        },
+        "name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "registrationId",
+        "name",
+        "phone"
+      ]
     }
   },
   "type": "object",
@@ -382,6 +404,9 @@
     },
     "registration": {
       "$ref": "#/definitions/Registration"
+    },
+    "participant": {
+      "$ref": "#/definitions/Participant"
     }
   }
 }

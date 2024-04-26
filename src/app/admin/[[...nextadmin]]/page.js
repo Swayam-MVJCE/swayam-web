@@ -53,6 +53,10 @@ export const options = {
       toString: (item) => item.name,
       title: 'User',
     },
+    Participant: {
+      title: 'Participants',
+      toString: (participant) => participant.name + ' - ' + participant.phone,
+    },
     Registration: {
       title: 'Registrations',
       list: {
@@ -73,6 +77,7 @@ export const options = {
           'event',
           'phone',
           'noOfParticipants',
+          'participants',
           'paymentAmount',
           'createdAt',
         ],
@@ -83,9 +88,6 @@ export const options = {
       },
       edit: {
         fields: {
-          participants: {
-            format: 'textarea',
-          },
           screenshotUrl: {
             input: <ViewScreenshotButton />,
           },

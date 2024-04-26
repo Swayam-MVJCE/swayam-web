@@ -13,6 +13,7 @@ export default function FormSubmissionDialog({
   closeModal,
   status,
   message,
+  data,
 }) {
   return (
     <>
@@ -121,14 +122,14 @@ export default function FormSubmissionDialog({
                     <div className="flex flex-row w-full items-center justify-between mt-4 gap-2">
                       <Link
                         className="px-4 flex items-center justify-center gap-2 py-2 w-full bg-gray-400 bg-opacity-15 text-nowrap border-gray-400 border border-opacity-40 cursor-pointer font-satoshi backdrop-blur-sm rounded-xl m-2 hover:bg-gradient-purple transition-all duration-500 hover:scale-105"
-                        href="/events"
+                        href="/my-events"
                       >
                         <FaUser />
                         My Events
                       </Link>
                       <Link
                         className="px-4 flex items-center justify-center gap-2 py-2 w-full bg-gray-400 bg-opacity-15 text-nowrap border-gray-400 border border-opacity-40 cursor-pointer font-satoshi backdrop-blur-sm rounded-xl m-2 hover:bg-gradient-purple transition-all duration-500 hover:scale-105"
-                        href="/events"
+                        href={`/ticket/${data.id}`}
                       >
                         <HiTicket size={22} />
                         View E-Ticket

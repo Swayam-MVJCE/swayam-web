@@ -79,7 +79,7 @@ const EventPage = async ({ params }) => {
                 <h3 className="text-rose-300 font-satoshi text-lg md:text-xl mb-4">
                   {eventData.category}
 
-                  <span className="text-gray-400 font-satoshi text-md">
+                  <span className="text-gray-300 font-satoshi text-md">
                     {' | '}
                     {new Date(eventData.date).toLocaleDateString('en', {
                       day: 'numeric',
@@ -106,7 +106,7 @@ const EventPage = async ({ params }) => {
                     <img src="/images/trophy-icon.svg" alt="prize" />
                     <span className="text-gray-400 font-satoshi text-md">
                       1st Prize :{' '}
-                      <span className="text-lg bg-gradient-purple text-transparent bg-clip-text font-semibold">
+                      <span className="text-lg text-white font-semibold">
                         {eventData.firstPrize}
                       </span>
                     </span>
@@ -115,7 +115,7 @@ const EventPage = async ({ params }) => {
                     <img src="/images/trophy-icon.svg" alt="prize" />
                     <span className="text-gray-400 font-satoshi text-md">
                       2nd Prize :{' '}
-                      <span className="text-lg bg-gradient-purple text-transparent bg-clip-text font-semibold">
+                      <span className="text-lg text-white font-semibold">
                         {eventData.secondPrize}
                       </span>
                     </span>

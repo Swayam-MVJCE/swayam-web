@@ -5,6 +5,7 @@ import { useController, useForm } from 'react-hook-form';
 import { useFieldArray } from 'react-hook-form';
 import { CiCirclePlus } from 'react-icons/ci';
 import { CiCircleMinus } from 'react-icons/ci';
+import { MdCancel, MdOutlineCancel } from 'react-icons/md';
 
 import Link from 'next/link';
 import {
@@ -16,24 +17,25 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { registrationSubmit } from '@/app/actions/registrationSubmit';
-import { formSchema } from '@/lib/formSchema';
+import { createFormSchema } from '@/lib/formSchema';
 import FormSubmissionDialog from './FormSubmissionDialog';
 import { useClientMediaQuery } from '@/lib/useClientMediaQuery';
-
 import { useRouter } from 'next/navigation';
+import { IoPersonRemove, IoPersonRemoveOutline } from 'react-icons/io5';
 
 const EventRegistrationForm = ({ event, session, qr }) => {
   const router = useRouter();
   const [status, setStatus] = useState('');
   const [message, setMessage] = useState('');
+  const [resData, setResData] = useState({});
   const [modalOpen, setModalOpen] = useState(false);
   const isMobile = useClientMediaQuery('(max-width: 600px)');
-
+  const formSchema = createFormSchema(event);
+  console.log(formSchema);
   const form = useForm({
     resolver: zodResolver(formSchema),
-
     defaultValues: {
       name: session?.user?.name || '',
       email: session?.user?.email || '',
@@ -53,8 +55,15 @@ const EventRegistrationForm = ({ event, session, qr }) => {
     event: event,
     session,
   });
+  useEffect(() => {
+    const subscription = form.watch((value, { name, type }) =>
+      console.log(value, name, type)
+    );
+    return () => subscription.unsubscribe();
+  }, [form.watch]);
 
   async function onSubmit(data) {
+    console.log(data);
     setStatus('loading');
     setModalOpen(true);
     console.log(data);
@@ -64,10 +73,12 @@ const EventRegistrationForm = ({ event, session, qr }) => {
     formData.append('contact', data.contact);
     formData.append('college', data.college);
     formData.append('utrNumber', data.utrNumber);
-    formData.append('noOfParticipants', data.noOfParticipants);
-    formData.append('participants', data.participants);
+    if (event.isGroup) {
+      formData.append('participants', JSON.stringify(data.participants));
+    }
     formData.append('screenshot', data.screenshot);
 
+    console.log(formData);
     const res = await registrationSubmitWithMeta(formData);
     if (res.message) {
       setMessage(res.message);
@@ -80,12 +91,13 @@ const EventRegistrationForm = ({ event, session, qr }) => {
     }
     if (res.status === 'success') {
       setStatus('success');
+      setResData(res.data);
     }
   }
 
   return (
     <Form {...form}>
-      <FormSubmissionDialog isOpen={modalOpen} status={status} />
+      <FormSubmissionDialog isOpen={modalOpen} status={status} data={resData} />
       <form
         action={registrationSubmit}
         onSubmit={form.handleSubmit(onSubmit)}
@@ -99,7 +111,9 @@ const EventRegistrationForm = ({ event, session, qr }) => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Full Name</FormLabel>
+                  <FormLabel>
+                    Full Name {event.isGroup && '(Group Leader)'}
+                  </FormLabel>
                   <FormControl>
                     <Input className="" {...field} />
                   </FormControl>
@@ -128,9 +142,9 @@ const EventRegistrationForm = ({ event, session, qr }) => {
               name="contact"
               render={({ field }) => (
                 <FormItem className="">
-                  <FormLabel>Contact Number (WhatsApp)</FormLabel>
+                  <FormLabel>Contact Number (WhatsApp) </FormLabel>
                   <FormControl>
-                    <Input type="tel" required className="" {...field} />
+                    <Input type="tel" className="" {...field} />
                   </FormControl>
 
                   <FormMessage />
@@ -144,7 +158,7 @@ const EventRegistrationForm = ({ event, session, qr }) => {
                 <FormItem className="">
                   <FormLabel>College Name</FormLabel>
                   <FormControl>
-                    <Input className="" {...field} />
+                    <Input type="text" {...field} />
                   </FormControl>
 
                   <FormMessage />
@@ -154,16 +168,9 @@ const EventRegistrationForm = ({ event, session, qr }) => {
             {/* </div> */}
             {event.isGroup && (
               <>
-                <FormField
+                {/* <FormField
                   control={form.control}
                   name="noOfParticipants"
-                  rules={{
-                    required: true,
-                    validate: (value) =>
-                      (value >= event.minParticipants &&
-                        value <= event.maxParticipants) ||
-                      'Number of participants must be within the specified range.',
-                  }}
                   render={({ field, fieldState: { error } }) => (
                     <FormItem>
                       <FormLabel>
@@ -174,21 +181,56 @@ const EventRegistrationForm = ({ event, session, qr }) => {
                         <Input type="number" required className="" {...field} />
                       </FormControl>
 
-                      {error && <FormMessage error={error.message} />}
+                      <FormMessage />
                     </FormItem>
                   )}
-                />
+                /> */}
 
                 {event.isGroup && (
                   <>
-                    <FormLabel>Team Members</FormLabel>
+                    <FormLabel>
+                      Group Members (Min:{event.minParticipants} & Max:{' '}
+                      {event.maxParticipants})
+                    </FormLabel>
+                    <FormLabel>
+                      <span className="text-blue-300 text-xs">
+                        Note: Please include only group members here, excluding
+                        the Group Leader.
+                      </span>
+                    </FormLabel>
                     {fields.map((item, index) => (
-                      <div key={item.id}>
+                      <div
+                        className="flex flex-col gap-2 border border-white rounded-lg p-3 relative bg-gray-400 bg-opacity-10 backdrop-blur-lg"
+                        key={item.id}
+                      >
+                        <FormLabel className="text-lg font-bold">
+                          Participant {index + 1}
+                        </FormLabel>
                         <FormField
                           control={form.control}
                           name={`participants[${index}].name`}
                           render={({ field }) => (
                             <FormItem>
+                              <FormLabel>Name</FormLabel>
+                              <FormControl>
+                                <Input
+                                  className=""
+                                  {...field}
+                                  placeholder={`Participant ${
+                                    index + 1
+                                  } - Name`}
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name={`participants[${index}].phone`}
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Contact Number (Whatsapp)</FormLabel>
                               <FormControl>
                                 <Input
                                   className=""
@@ -198,27 +240,42 @@ const EventRegistrationForm = ({ event, session, qr }) => {
                                   } - Contact Number`}
                                 />
                               </FormControl>
-                              <button
-                                type="button"
-                                onClick={() => remove(index)}
-                              >
-                                Remove Participant
-                              </button>
+                              <FormMessage />
                             </FormItem>
                           )}
                         />
+                        <button
+                          type="button"
+                          className="text-rose-500 text-sm absolute top-3 right-3"
+                          onClick={() => remove(index)}
+                        >
+                          <MdOutlineCancel size={28} />
+                        </button>
                       </div>
                     ))}
                     <button
                       type="button"
-                      onClick={() => append({ name: '' })}
+                      className="flex flex-row items-center justify-center gap-2 bg-gray-500 bg-opacity-50 border border-white text-gray-100 px-4 py-2 rounded-lg"
+                      onClick={() => append({ name: '', phone: '' })}
                       disabled={
-                        !form.watch('noOfParticipants') ||
-                        fields.length >= form.watch('noOfParticipants')
+                        fields.length >= event.maxParticipants ||
+                        status === 'loading'
                       }
                     >
-                      Add Participant
+                      {fields.length >= event.maxParticipants ? (
+                        <span>Max Participants Reached</span>
+                      ) : (
+                        <>
+                          <CiCirclePlus />
+                          <span>Add Participant</span>
+                        </>
+                      )}
                     </button>
+                    <FormMessage>
+                      {console.log(form.formState.errors)}
+                      {form.formState.errors.participants &&
+                        form.formState.errors.participants.message}
+                    </FormMessage>
                   </>
                 )}
               </>

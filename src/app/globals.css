@@ -29,6 +29,11 @@ body {
   }
 }
 
+.purple-card-gradient {
+  background: #03001e; /* fallback for old browsers */
+  background: url('/images/purple-card-bg.jpeg') no-repeat center center;
+}
+
 .bg-image {
   position: fixed;
   top: 0;
