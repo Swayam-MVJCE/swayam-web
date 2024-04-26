@@ -12,6 +12,7 @@ export const mirthaDisplay = localFont({
   src: '../../public/fonts/mirtha-display.woff2',
   display: 'swap',
   variable: '--font-mirtha',
+  preload: true,
 });
 
 const satoshi = localFont({

@@ -28,6 +28,9 @@ export async function downloadCSVAction(eventId) {
       createdAt: true,
     },
   });
-  const csv = json2csv(registrations);
+  const csv = json2csv(registrations, {
+    arrayIndexesAsKeys: true,
+    expandNestedObjects: true,
+  });
   return csv;
 }
