@@ -12,6 +12,9 @@ const Ticket = async ({ id }) => {
       where: {
         id,
       },
+      include: {
+        participants: true,
+      },
     });
 
     event = await prisma.event.findUnique({
@@ -87,7 +90,13 @@ const Ticket = async ({ id }) => {
                   Participants
                 </h1>
                 <h1 className="text-xs md:text-sm whitespace-pre-wrap">
-                  {registration.participants}
+                  {registration.participants.map(
+                    (participant, index) =>
+                      `${participant.name}` +
+                      (index === registration.participants.length - 1
+                        ? ''
+                        : ', ')
+                  )}
                 </h1>
               </div>
             )}

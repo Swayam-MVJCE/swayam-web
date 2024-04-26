@@ -1,6 +1,5 @@
 'use server';
 
-import { formSchema } from '@/lib/formSchema';
 import prisma from '@/utils/client';
 import {
   S3Client,
@@ -9,6 +8,7 @@ import {
 } from '@aws-sdk/client-s3';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../api/auth/[...nextauth]/route';
+import { createFormSchema } from '@/lib/formSchema';
 
 const s3 = new S3Client({
   endpoint: process.env.S3_ENDPOINT,
@@ -31,14 +31,32 @@ export async function registrationSubmit(metadata, data) {
     },
   });
 
-  if (registration) {
+  // if (registration) {
+  //   return {
+  //     status: 'error',
+  //     message: 'You have already registered for this event',
+  //   };
+  // }
+
+  const event = await prisma.event.findUnique({
+    where: {
+      id: metadata.event.id,
+    },
+  });
+
+  if (!event) {
     return {
       status: 'error',
-      message: 'You have already registered for this event',
+      message: 'You are trying to register for an invalid event',
     };
   }
 
+  console.log(data);
   const formData = Object.fromEntries(data);
+  if (event.isGroup) {
+    formData.participants = JSON.parse(formData.participants);
+  }
+  const formSchema = createFormSchema(event);
   const parsed = formSchema.safeParse(formData);
   if (!parsed.success) {
     console.log(parsed.error);
@@ -66,16 +84,20 @@ export async function registrationSubmit(metadata, data) {
 
     const newRegistration = await prisma.registration.create({
       data: {
-        eventId: metadata.event.id,
+        eventId: event.id,
         userId: session.user.id,
         name: formData.name,
         email: formData.email,
         phone: formData.contact,
         collegeName: formData.college,
         paymentId: formData.utrNumber,
-        noOfParticipants: parseInt(formData.noOfParticipants),
-        participants: formData.participants,
-        paymentAmount: metadata.event.registrationFee,
+        noOfParticipants: event.isGroup ? formData.participants.length : 0,
+        participants: event.isGroup
+          ? {
+              create: formData.participants,
+            }
+          : undefined,
+        paymentAmount: event.registrationFee,
         screenshotUrl: `${process.env.S3_ENDPOINT}/${process.env.S3_BUCKET_NAME}/${s3ObjectKey}`,
       },
     });

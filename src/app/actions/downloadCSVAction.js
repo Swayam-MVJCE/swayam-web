@@ -15,7 +15,12 @@ export async function downloadCSVAction(eventId) {
       phone: true,
       collegeName: true,
       noOfParticipants: true,
-      participants: true,
+      participants: {
+        select: {
+          name: true,
+          phone: true,
+        },
+      },
       paymentVerification: true,
       paymentAmount: true,
       paymentId: true,

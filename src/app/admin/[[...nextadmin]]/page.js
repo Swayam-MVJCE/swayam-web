@@ -83,9 +83,6 @@ export const options = {
       },
       edit: {
         fields: {
-          participants: {
-            format: 'textarea',
-          },
           screenshotUrl: {
             input: <ViewScreenshotButton />,
           },
