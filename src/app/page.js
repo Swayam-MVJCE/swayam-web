@@ -3,6 +3,8 @@ import Footer from '@/components/Footer';
 import GalleryTicker from '@/components/GalleryTicker';
 import Navbar from '@/components/Navbar';
 import ParallaxScroll from '@/components/ParallaxScroll';
+import Link from 'next/link';
+import { IoIosArrowRoundForward } from 'react-icons/io';
 
 export default function Home() {
   return (
@@ -56,6 +58,13 @@ export default function Home() {
         </h1>
 
         <FeaturedEventsSlider />
+        <Link
+          href={'/events'}
+          className="font-satoshi text-center flex flex-row gap-2 text-2xl mt-4 tracking-normal leading-none bg-white text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500 swayam-text"
+        >
+          <span>Explore All Events</span>{' '}
+          <IoIosArrowRoundForward color="#FFF" />
+        </Link>
       </div>
       <Footer />
       <div className="bg-image"></div>

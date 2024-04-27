@@ -18,46 +18,55 @@ const slides = [
     image: '/images/featured-events/depiction.png',
     title: 'Depiction - Water Colour Painting',
     organizer: 'Fine Arts',
+    link: '/events/depiction-water-colour-painting',
   },
   {
     image: '/images/featured-events/doodling.png',
     title: 'Doodling',
     organizer: 'Fine Arts',
+    link: '/events/doodling-t-shirt-painting',
   },
   {
     image: '/images/featured-events/le-panga.png',
     title: 'Le Panga - Dance Battle',
     organizer: 'Dance',
+    link: '/events/le-panga',
   },
   {
     image: '/images/featured-events/short-film.png',
     title: 'Short Film Making',
     organizer: 'Theatre and Production',
+    link: '/events/short-film-making',
   },
   {
     image: '/images/featured-events/mime.png',
     title: 'Mime Group',
     organizer: 'Theatre and Production',
+    link: '/events/mime-group',
   },
   {
     image: '/images/featured-events/sangeet-samrat.png',
     title: 'Sangeet Samrat',
     organizer: 'Music',
+    link: '/events/sangeet-samraat-indian-classical-singing',
   },
   {
     image: '/images/featured-events/battle-of-bands.png',
     title: 'Battle of Bands',
     organizer: 'Music',
+    link: '/events/battle-of-bands',
   },
   {
     image: '/images/featured-events/jam.png',
     title: 'JAM',
     organizer: 'Literature',
+    link: '/events/jam',
   },
   {
     image: '/images/featured-events/slam-poetry.png',
     title: 'Slam Poetry',
     organizer: 'Literature',
+    link: '/events/slam-poetry',
   },
 ];
 
@@ -75,12 +84,12 @@ function FeaturedEventsSlider() {
   }, []);
 
   return (
-    <div className='w-full'>
+    <div className="w-full">
       <Swiper
         grabCursor={true}
         centeredSlides={true}
         loop={true}
-        effect='coverflow'
+        effect="coverflow"
         coverflowEffect={{
           slideShadows: false,
           depth: 60,
@@ -94,13 +103,14 @@ function FeaturedEventsSlider() {
           clickable: true,
         }}
         modules={[EffectCoverflow, Pagination, Navigation]}
-        className='swiper_container h-[550px] overflow-visible w-full !pt-20'
+        className="swiper_container h-[550px] overflow-visible w-full !pt-20"
       >
         <SwiperSlide>
           <MainEventCard
-            image='/images/featured-events/kalakshetra.png'
-            title='KALAkshetra'
-            organizer='MEGA EVENT'
+            image="/images/featured-events/kalakshetra.png"
+            title="KALAkshetra"
+            organizer="MEGA EVENT"
+            href="/events/kalakshetra"
           ></MainEventCard>
         </SwiperSlide>
         {slides.map((slide, index) => (
@@ -109,18 +119,19 @@ function FeaturedEventsSlider() {
               image={slide.image}
               title={slide.title}
               organizer={slide.organizer}
+              href={slide.link}
             />
           </SwiperSlide>
         ))}
 
-        <div className='slider-controler'>
-          <div className='swiper-button-prev slider-arrow'>
-            <ion-icon name='arrow-back-outline'></ion-icon>
+        <div className="slider-controler">
+          <div className="swiper-button-prev slider-arrow">
+            <ion-icon name="arrow-back-outline"></ion-icon>
           </div>
-          <div className='swiper-button-next slider-arrow'>
-            <ion-icon name='arrow-forward-outline'></ion-icon>
+          <div className="swiper-button-next slider-arrow">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
           </div>
-          <div className='swiper-pagination'></div>
+          <div className="swiper-pagination"></div>
         </div>
       </Swiper>
     </div>
