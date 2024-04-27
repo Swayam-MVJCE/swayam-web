@@ -10,6 +10,11 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '../api/auth/[...nextauth]/route';
 import { createFormSchema } from '@/lib/formSchema';
 
+import { render } from '@react-email/render';
+import nodemailer from 'nodemailer';
+import { RegistrationEmail } from '../../../emails/RegistrationEmail';
+
+
 const s3 = new S3Client({
   endpoint: process.env.S3_ENDPOINT,
   region: process.env.S3_REGION,
@@ -100,8 +105,34 @@ export async function registrationSubmit(metadata, data) {
         paymentAmount: event.registrationFee,
         screenshotUrl: `${process.env.S3_ENDPOINT}/${process.env.S3_BUCKET_NAME}/${s3ObjectKey}`,
       },
+      include : {
+        participants: true,
+        event: true,
+      },
     });
     console.log(newRegistration);
+    if (newRegistration) {
+      const transporter = nodemailer.createTransport({
+        host: process.env.EMAIL_HOST,
+        port: process.env.EMAIL_PORT,
+        secure: true,
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS,
+        },
+      });
+      
+      const emailHtml = render(RegistrationEmail({ registration: newRegistration }));
+      
+      const options = {
+        from: process.env.EMAIL_USER,
+        to: newRegistration.email,
+        subject: 'Swayam 2024 Registration for ' + event.title,
+        html: emailHtml,
+      };
+      
+      await transporter.sendMail(options);
+    }
     return {
       status: 'success',
       message: 'Registration submitted successfully',
