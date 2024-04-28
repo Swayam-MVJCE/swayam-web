@@ -14,6 +14,7 @@ const TicketPage = async ({ params }) => {
       },
       include: {
         participants: true,
+        event: true,
       },
     });
 
