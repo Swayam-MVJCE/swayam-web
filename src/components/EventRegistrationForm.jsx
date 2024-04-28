@@ -62,6 +62,12 @@ const EventRegistrationForm = ({ event, session, qr }) => {
     return () => subscription.unsubscribe();
   }, [form.watch]);
 
+  useEffect(() => {
+    if (form.formState.errors) {
+      console.log(form.formState.errors);
+    }
+  }, [form.formState.errors]);
+
   async function onSubmit(data) {
     console.log(data);
     setStatus('loading');
