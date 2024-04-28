@@ -24,6 +24,7 @@
     "@react-email/components": "^0.0.16",
     "@react-email/render": "^0.0.12",
     "@react-pdf/renderer": "^3.4.2",
+    "@vercel/analytics": "^1.2.2",
     "@yudiel/react-qr-scanner": "^2.0.0-beta.3",
     "bwip-js": "^4.3.2",
     "class-variance-authority": "^0.7.0",

@@ -5,6 +5,7 @@ import Providers from './provider';
 import { ToastContainer, toast } from 'react-toastify';
 import NextTopLoader from 'nextjs-toploader';
 import 'react-toastify/dist/ReactToastify.css';
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -63,6 +64,7 @@ export default function RootLayout({ children }) {
         <NextTopLoader color="#c800ff" />
         <Providers>{children}</Providers>
         <ToastContainer />
+        <Analytics />
       </body>
     </html>
   );
