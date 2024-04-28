@@ -33,15 +33,15 @@ const TicketCard = ({ event, registration }) => {
             </div>
           </div>
 
-          <div className="flex flex-col items-start mt-11">
-            <h1
+          <div className="flex flex-col items-start mt-11 w-full text-wrap">
+            <p
               style={{
                 fontFamily: 'Mirtha Display, sans-serif',
               }}
-              className={`text-5xl sm:text-7xl tracking-wider font-mirtha`}
+              className={`text-5xl sm:text-5xl tracking-wider font-mirtha flex-wrap`}
             >
               {event?.title}
-            </h1>
+            </p>
             <h1 className="font-semibold text-sm">{readableDate}</h1>
 
             <div className="flex items-center w-full justify-between mt-7">
@@ -76,15 +76,13 @@ const TicketCard = ({ event, registration }) => {
               </div>
             )}
 
-            {event.isGroup ? (
-              <QRCode level="Q" value={registration.id} size={80} />
-            ) : (
-              <QRCode
-                value={registration.id}
-                size={80}
-                className="flex w-full items-center mt-4"
-              />
-            )}
+            <QRCode
+              bgColor="#fff"
+              enableBackground={true}
+              value={registration.id}
+              size={120}
+              className="p-1 bg-white"
+            />
           </div>
         </div>
       </div>
