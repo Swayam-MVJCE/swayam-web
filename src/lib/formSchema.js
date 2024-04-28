@@ -49,7 +49,7 @@ export const createFormSchema = (event) => {
 
   if (event && !event.isGroup) {
     schema = schema.extend({
-      participants: z.string().optional(),
+      participants: z.array().optional(),
     });
   }
   return schema;
