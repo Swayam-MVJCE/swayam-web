@@ -41,9 +41,7 @@ const Footer = () => {
           <p className="text-gray-300 font-bold text-lg max-w-64">
             Connect with Us
           </p>
-          <Link href="#" className="text-gray-300 text-sm font-light">
-            Facebook
-          </Link>
+
           <Link
             href="https://www.instagram.com/swayam_mvjce/"
             className="text-gray-300 text-sm font-light"
@@ -51,7 +49,10 @@ const Footer = () => {
           >
             Instagram
           </Link>
-          <Link href="#" className="text-gray-300 text-sm font-light">
+          <Link
+            href="https://www.youtube.com/@MVJCollegeofEngineering"
+            className="text-gray-300 text-sm font-light"
+          >
             YouTube
           </Link>
         </div>
