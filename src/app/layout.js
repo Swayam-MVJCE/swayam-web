@@ -1,15 +1,19 @@
 import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import Providers from './provider';
+import { ToastContainer, toast } from 'react-toastify';
+import NextTopLoader from 'nextjs-toploader';
+import 'react-toastify/dist/ReactToastify.css';
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
-const mirthaDisplay = localFont({
+export const mirthaDisplay = localFont({
   src: '../../public/fonts/mirtha-display.woff2',
   display: 'swap',
   variable: '--font-mirtha',
+  preload: true,
 });
 
 const satoshi = localFont({
@@ -32,21 +36,35 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
+    <html lang="en">
+      <head>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body
         className={`${inter.variable} ${mirthaDisplay.variable} ${satoshi.variable} ${chamisty.variable} overflow-x-hidden`}
       >
-        <Navbar />
-        {children}
-        <Footer />
-        <div className='bg-image'></div>
-        <div className='bg-gradient'></div>
-        <div className='light-container'>
-          <div className='blurred-lighting top-left'></div>
-          <div className='blurred-lighting top-right'></div>
-          <div className='blurred-lighting bottom-left'></div>
-          <div className='blurred-lighting bottom-right'></div>
-        </div>
+        <NextTopLoader color="#c800ff" />
+        <Providers>{children}</Providers>
+        <ToastContainer />
+        <Analytics />
       </body>
     </html>
   );

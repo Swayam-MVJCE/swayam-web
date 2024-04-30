@@ -1,0 +1,412 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Account": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "providerAccountId": {
+          "type": "string"
+        },
+        "refresh_token": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "access_token": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "expires_at": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "token_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "scope": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "id_token": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "session_state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        }
+      },
+      "required": [
+        "userId",
+        "type",
+        "provider",
+        "providerAccountId"
+      ]
+    },
+    "Session": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "sessionToken": {
+          "type": "string"
+        },
+        "expires": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        }
+      },
+      "required": [
+        "sessionToken",
+        "userId",
+        "expires"
+      ]
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "email": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "emailVerified": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "image": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "accounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Account"
+          }
+        },
+        "sessions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Session"
+          }
+        },
+        "role": {
+          "type": "string",
+          "default": "USER",
+          "enum": [
+            "ADMIN",
+            "USER"
+          ]
+        }
+      },
+      "required": []
+    },
+    "VerificationToken": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "expires": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "identifier",
+        "token",
+        "expires"
+      ]
+    },
+    "Event": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "judgingCriteria": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rules": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "poster_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "time": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "venue": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "registrationFee": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "firstPrize": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "secondPrize": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "category": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "isGroup": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "default": false
+        },
+        "minParticipants": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "default": 1
+        },
+        "maxParticipants": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "default": 1
+        },
+        "registrations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Registration"
+          }
+        }
+      },
+      "required": [
+        "title",
+        "slug",
+        "description"
+      ]
+    },
+    "Registration": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "userId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "email": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "collegeName": {
+          "type": "string"
+        },
+        "noOfParticipants": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Participant"
+          }
+        },
+        "paymentVerification": {
+          "type": "string",
+          "default": "PENDING",
+          "enum": [
+            "PENDING",
+            "VERIFIED",
+            "FAILED"
+          ]
+        },
+        "paymentAmount": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "paymentId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "screenshotUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "event": {
+          "$ref": "#/definitions/Event"
+        }
+      },
+      "required": [
+        "eventId",
+        "name",
+        "phone",
+        "collegeName",
+        "updatedAt"
+      ]
+    },
+    "Participant": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "registration": {
+          "$ref": "#/definitions/Registration"
+        },
+        "name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "registrationId",
+        "name",
+        "phone"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "account": {
+      "$ref": "#/definitions/Account"
+    },
+    "session": {
+      "$ref": "#/definitions/Session"
+    },
+    "user": {
+      "$ref": "#/definitions/User"
+    },
+    "verificationToken": {
+      "$ref": "#/definitions/VerificationToken"
+    },
+    "event": {
+      "$ref": "#/definitions/Event"
+    },
+    "registration": {
+      "$ref": "#/definitions/Registration"
+    },
+    "participant": {
+      "$ref": "#/definitions/Participant"
+    }
+  }
+}
