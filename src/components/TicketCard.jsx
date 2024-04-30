@@ -19,7 +19,7 @@ const TicketCard = ({ event, registration }) => {
         style={{
           fontFamily: 'Satoshi, sans-serif',
         }}
-        className="purple-card-gradient w-[300px] h-[400px] sm:w-[400px] sm:h-[500px] rounded-md text-white border border-fuchsia-400 shadow-lg shadow-purple-600"
+        className="purple-card-gradient w-[300px] h-[400px] sm:w-[400px] sm:min-h-[500px] rounded-md text-white border border-fuchsia-400 shadow-lg shadow-purple-600"
       >
         <div className="flex flex-col justify-between w-full h-full p-4">
           <div className="w-full flex items-center justify-between">
@@ -35,9 +35,6 @@ const TicketCard = ({ event, registration }) => {
 
           <div className="flex flex-col items-start mt-11 w-full text-wrap">
             <p
-              style={{
-                fontFamily: 'Mirtha Display, sans-serif',
-              }}
               className={`text-5xl sm:text-5xl tracking-wider font-mirtha flex-wrap`}
             >
               {event?.title}
@@ -81,7 +78,7 @@ const TicketCard = ({ event, registration }) => {
               enableBackground={true}
               value={registration.id}
               size={120}
-              className="p-1 bg-white"
+              className="p-1 bg-white min-h-[120px] min-w-[120px] max-h-[120px] max-w-[120px]"
             />
           </div>
         </div>
