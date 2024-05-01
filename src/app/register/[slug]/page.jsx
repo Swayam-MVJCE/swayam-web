@@ -29,7 +29,9 @@ const RegistrationPage = async ({ params }) => {
 
   const session = await getServerSession(authOptions);
   if (!session) {
-    return redirect(`/login?redirect=/register/${slug}`);
+    return redirect(
+      `/login?callbackUrl=${encodeURIComponent('/register/' + slug)}`
+    );
   }
 
   const registration = await prisma.registration.findFirst({

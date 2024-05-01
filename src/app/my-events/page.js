@@ -27,8 +27,8 @@ const MyEventsPage = async () => {
 
   return (
     <MainLayout>
-      <div className="flex flex-row flex-wrap font-satoshi gap-10 p-6 md:p-10 w-screen justify-center items-start ">
-        <h2 className="text-8xl text-center font-mirtha md:ml-10 md:text-start basis-full">
+      <div className="flex flex-row flex-wrap font-satoshi gap-10 p-6 md:p-10 w-screen text-white justify-center items-start ">
+        <h2 className="text-8xl text-center font-mirtha  md:text-center basis-full">
           My Events
         </h2>
         {myRegistrations.length > 0 ? (

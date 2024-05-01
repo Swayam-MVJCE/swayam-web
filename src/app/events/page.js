@@ -80,7 +80,7 @@ export default async function EventsPage({ searchParams }) {
               <Link
                 href={`/events?category=${category}`}
                 key={category}
-                className={`px-4 py-1 bg-gray-400 bg-opacity-15 text-nowrap border-gray-400 border border-opacity-40 cursor-pointer font-satoshi backdrop-blur-sm rounded-xl m-2 hover:bg-gradient-purple transition-all duration-500 hover:scale-105 ${
+                className={`px-4 py-1 text-white bg-gray-400 bg-opacity-15 text-nowrap border-gray-400 border border-opacity-40 cursor-pointer font-satoshi backdrop-blur-sm rounded-xl m-2 hover:bg-gradient-purple transition-all duration-500 hover:scale-105 ${
                   category === selectedCategory ? 'bg-gradient-purple' : ''
                 }`}
               >

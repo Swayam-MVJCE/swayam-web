@@ -109,7 +109,7 @@ const EventRegistrationForm = ({ event, session, qr }) => {
         onSubmit={form.handleSubmit(onSubmit)}
         className="w-full  font-satoshi"
       >
-        <div className="w-full flex flex-col md:flex-row mt-4 gap-20">
+        <div className="w-full flex flex-col md:flex-row mt-4 gap-20 text-white">
           {/* Left Div */}
           <div className="basis-3/5 w-full gap-4 flex flex-col items-stretch justify-start">
             <FormField
@@ -410,7 +410,7 @@ const EventRegistrationForm = ({ event, session, qr }) => {
         <button
           type="submit"
           disabled={status === 'loading' || status === 'success'}
-          className="text-white w-full font-semibold text-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800  rounded-lg px-5 py-3 text-center me-2 mb-2"
+          className="text-white w-full font-semibold text-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 rounded-lg px-5 py-3 text-center me-2 mb-2"
         >
           {status === 'loading' ? (
             <span className="animate-pulse">Registering...</span>

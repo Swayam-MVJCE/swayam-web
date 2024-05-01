@@ -40,11 +40,18 @@ const GuidelinesPage = () => {
             Restricted Items
           </h1>
           <p className="whitespace-pre text-wrap font-satoshi text-gray-300 leading-relaxed text-lg">
-            <ul className="list-inside list-disc">
-              <li>Do not misbehave on the campus.</li>
-              <li>Do not consume alcohol or other illicit substances.</li>
-              <li>Do not carry restricted items.</li>
-              <li>Do not forget to have fun {':)'}</li>
+            <ul className={'list-inside list-disc'}>
+              <li>
+                Alcohol{'/'}Lighters{'/'}Cigarettes{'/'}E-Cigarettes &amp;
+                Drugs.
+              </li>
+              <li>
+                Flammable objects{'/'}Perfumes{'/'}Deodrants &amp; Sanitizers.
+              </li>
+              <li>Helmets &amp; Cosmetics.</li>
+              <li>
+                Sharp objects or Weapons - Pocket Knives {'/'} Razors, etc.
+              </li>
             </ul>
           </p>
         </div>
