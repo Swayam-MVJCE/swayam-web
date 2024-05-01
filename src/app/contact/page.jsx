@@ -1,7 +1,6 @@
 import MainLayout from '@/components/MainLayout';
 import { FiInstagram } from 'react-icons/fi';
 import { TbMapPinFilled } from 'react-icons/tb';
-import { GrYoutube } from 'react-icons/gr';
 
 const Contact = () => {
   return (
@@ -24,19 +23,46 @@ const Contact = () => {
                   <p className="mt-2 text-white">
                     Abhinav Datta -{' '}
                     <a
-                      href="tel:+9739482736"
+                      href="tel:+918017991099"
                       className="underline font-bold text-fuchsia-500 hover:text-pink-400"
                     >
-                      8017991099
+                      +918017991099
                     </a>
                   </p>
                   <p className="mt-2 text-white">
                     Nathasha D&apos;souza -{' '}
                     <a
-                      href="tel:+917337769676"
+                      href="tel:+917892840595"
                       className="underline font-bold text-fuchsia-500 hover:text-pink-400"
                     >
-                      7892840595
+                      +917892840595
+                    </a>
+                  </p>
+                  <p className="mt-2 text-white">
+                    Titir -{' '}
+                    <a
+                      href="tel:+917760374427"
+                      className="underline font-bold text-fuchsia-500 hover:text-pink-400"
+                    >
+                      +917760374427
+                    </a>
+                  </p>
+                  <p className="mt-2 text-white">
+                    Deepthi -{' '}
+                    <a
+                      href="tel:+919353802488"
+                      className="underline font-bold text-fuchsia-500 hover:text-pink-400"
+                    >
+                      +919353802488
+                    </a>
+                  </p>
+                  <p className="mt-2 text-white">
+                    Rohit -{' '}
+                    <a
+                      href="tel:+919731021515"
+                      className="underline font-bold text-fuchsia-500 hover:text-pink-400"
+                    >
+                      +919731021515
                     </a>
                   </p>
                 </div>
@@ -45,196 +71,224 @@ const Contact = () => {
                     Core Team Handling:
                   </h3>
                   <p className="mt-2 text-white">
-                    Abhinav Datta -{' '}
+                    Meghana -{' '}
                     <a
-                      href="tel:+918904901335"
+                      href="tel:+919014279195"
                       className="underline font-bold text-fuchsia-500 hover:text-pink-400"
                     >
-                      8017991099
+                      +919014279195
                     </a>
                   </p>
                   <p className="mt-2 text-white">
-                    Abhinav Datta -{' '}
+                    Pradipta -{' '}
                     <a
-                      href="tel:+919945806428"
+                      href="tel:+919937260879"
                       className="underline font-bold text-fuchsia-500 hover:text-pink-400"
                     >
-                      8017991099
+                      +919937260879
                     </a>
                   </p>
                   <p className="mt-2 text-white">
-                    Abhinav Datta -{' '}
+                    Priya -{' '}
                     <a
-                      href="tel:+918861658061"
+                      href="tel:+916360424161"
                       className="underline font-bold text-fuchsia-500 hover:text-pink-400"
                     >
-                      8017991099
+                      +916360424161
                     </a>
                   </p>
                   <p className="mt-2 text-white">
-                    Abhinav Datta -{' '}
+                    Krithi -{' '}
                     <a
-                      href="tel:+919916767279"
+                      href="tel:+919008813453"
                       className="underline font-bold text-fuchsia-500 hover:text-pink-400"
                     >
-                      8017991099
+                      +919008813453
+                    </a>
+                  </p>
+                  <p className="mt-2 text-white">
+                    Gauri -{' '}
+                    <a
+                      href="tel:+917752855554"
+                      className="underline font-bold text-fuchsia-500 hover:text-pink-400"
+                    >
+                      +917752855554
                     </a>
                   </p>
                 </div>
                 <div className="flex flex-col items-center justify-center p-4 text-center bg-black/60 rounded-lg">
-                  <h3 className="text-xl font-medium text-white underline decoration-purple-500">
-                    Events related Query:
+                  <h3 className="text-xl font-medium text-white underline decoration-purple-500 top-0">
+                    Registration
                   </h3>
                   <p className="mt-2 text-white">
-                    Abhinav Datta -{' '}
+                    Prateek -{' '}
                     <a
                       href="tel:+917249372899"
                       className="underline font-bold text-fuchsia-500 hover:text-pink-400"
                     >
-                      8017991099
+                      +917249372899
                     </a>
                   </p>
                   <p className="mt-2 text-white">
-                    Abhinav Datta -{' '}
+                    Siva -{' '}
                     <a
-                      href="tel:+917795236841"
+                      href="tel:+919741319192"
                       className="underline font-bold text-fuchsia-500 hover:text-pink-400"
                     >
-                      8017991099
+                      +919741319192
                     </a>
                   </p>
                 </div>
                 <div className="flex flex-col items-center justify-center p-4 text-center bg-black/60 rounded-lg">
-                  <h3 className="text-xl font-medium text-white underline decoration-purple-500">
-                    Registration Queries:
+                  <h3 className="text-xl font-medium text-white underline decoration-purple-500 top-0">
+                    Events related Query:
                   </h3>
                   <p className="mt-2 text-white">
-                    Abhinav Datta -{' '}
+                    Siva (Literature) -{' '}
                     <a
-                      href="tel:+919591834216"
+                      href="tel:+919741319192"
                       className="underline font-bold text-fuchsia-500 hover:text-pink-400"
                     >
-                      8017991099
+                      +919741319192
                     </a>
                   </p>
                   <p className="mt-2 text-white">
-                    Abhinav Datta -{' '}
+                    Yuvraj (Music) -{' '}
                     <a
-                      href="tel:+919731021515"
+                      href="tel:+918971728640"
                       className="underline font-bold text-fuchsia-500 hover:text-pink-400"
                     >
-                      8017991099
+                      +918971728640
+                    </a>
+                  </p>
+                  <p className="mt-2 text-white">
+                    Chinmayi (Dance) -{' '}
+                    <a
+                      href="tel:+919844137197"
+                      className="underline font-bold text-fuchsia-500 hover:text-pink-400"
+                    >
+                      +919844137197
+                    </a>
+                  </p>
+                  <p className="mt-2 text-white">
+                    Sharat (Theatre and production) -{' '}
+                    <a
+                      href="tel:+919380897991"
+                      className="underline font-bold text-fuchsia-500 hover:text-pink-400"
+                    >
+                      +919380897991
+                    </a>
+                  </p>
+                  <p className="mt-2 text-white">
+                    Aditya (Fine arts) -{' '}
+                    <a
+                      href="tel:+916361931910"
+                      className="underline font-bold text-fuchsia-500 hover:text-pink-400"
+                    >
+                      +916361931910
                     </a>
                   </p>
                 </div>
                 <div className="flex flex-col items-center justify-center p-4 text-center bg-black/60 rounded-lg">
-                  <h3 className="text-xl font-medium text-white underline decoration-purple-500">
-                    Hospitality:
+                  <h3 className="text-xl font-medium text-white underline decoration-purple-500 top-0">
+                    Hospitality
                   </h3>
                   <p className="mt-2 text-white">
-                    Abhinav Datta -{' '}
+                    Katherine -{' '}
                     <a
-                      href="tel:+917019393492"
+                      href="tel:+919022922966"
                       className="underline font-bold text-fuchsia-500 hover:text-pink-400"
                     >
-                      8017991099
-                    </a>
-                  </p>
-                  <p className="mt-2 text-white">
-                    Abhinav Datta -{' '}
-                    <a
-                      href="tel:+918017991099"
-                      className="underline font-bold text-fuchsia-500 hover:text-pink-400"
-                    >
-                      8017991099
+                      +919022922966
                     </a>
                   </p>
                 </div>
                 <div className="flex flex-col items-center justify-center p-4 text-center bg-black/60 rounded-lg">
-                  <h3 className="text-xl font-medium text-white underline decoration-purple-500">
+                  <h3 className="text-xl font-medium text-white underline decoration-purple-500 top-0">
+                    Accommodation
+                  </h3>
+                  <p className="mt-2 text-white">
+                    Vishnupriya -{' '}
+                    <a
+                      href="tel:+919679513003"
+                      className="underline font-bold text-fuchsia-500 hover:text-pink-400"
+                    >
+                      +919679513003
+                    </a>
+                  </p>
+                  <p className="mt-2 text-white">
+                    Narayan -{' '}
+                    <a
+                      href="tel:+919986719979"
+                      className="underline font-bold text-fuchsia-500 hover:text-pink-400"
+                    >
+                      +919986719979
+                    </a>
+                  </p>
+                </div>
+                <div className="flex flex-col items-center justify-center p-4 text-center bg-black/60 rounded-lg">
+                  <h3 className="text-xl font-medium text-white underline decoration-purple-500 top-0">
                     Website support:
                   </h3>
                   <p className="mt-2 text-white">
-                    Abhinav Datta -{' '}
-                    <a
-                      href="tel:+918553859240"
-                      className="underline font-bold text-fuchsia-500 hover:text-pink-400"
-                    >
-                      8017991099
-                    </a>
-                  </p>
-                  <p className="mt-2 text-white">
-                    Abhinav Datta -{' '}
+                    Sidharth -{' '}
                     <a
                       href="tel:+917560877023"
                       className="underline font-bold text-fuchsia-500 hover:text-pink-400"
                     >
-                      8017991099
+                      +917560877023
                     </a>
                   </p>
                   <p className="mt-2 text-white">
-                    Abhinav Datta -{' '}
+                    Varun -{' '}
                     <a
-                      href="tel:+918310819628"
+                      href="tel:+919980133790"
                       className="underline font-bold text-fuchsia-500 hover:text-pink-400"
                     >
-                      8017991099
+                      +919980133790
                     </a>
                   </p>
                 </div>
+
                 <div className="flex flex-col items-center justify-center p-4 text-center bg-black/60 rounded-lg">
-                  <h3 className="text-xl font-medium text-white underline decoration-purple-500">
-                    Accomodation:
-                  </h3>
-                  <p className="mt-2 text-white">
-                    Abhinav Datta -{' '}
-                    <a
-                      href="tel:+919731216858"
-                      className="underline font-bold text-fuchsia-500 hover:text-pink-400"
-                    >
-                      8017991099
-                    </a>
-                  </p>
-                </div>
-                <div className="flex flex-col items-center justify-center p-4 text-center bg-black/60 rounded-lg">
-                  <h3 className="text-xl font-medium text-white underline decoration-purple-500">
+                  <h3 className="text-xl font-medium text-white underline decoration-purple-500 top-0">
                     Faculty Co-ordinator:
                   </h3>
                   <p className="mt-2 text-white">
                     Hameem I Shanavas-{' '}
                     <a
-                      href="tel:+919620959690"
+                      href="tel:+918017991099"
                       className="underline font-bold text-fuchsia-500 hover:text-pink-400"
                     >
-                      8017991099
+                      +918017991099
                     </a>
                   </p>
                 </div>
               </div>
             </div>
-            <div class="flex flex-col items-center justify-center text-left w-full text-xl">
-              <div class="flex flex-row justify-center items-center gap-6 py-3">
-                <div class="group">
+            <div className="flex flex-col items-center justify-center text-left w-full text-xl">
+              <div className="flex flex-row justify-center items-center gap-6 py-3">
+                <div className="group">
                   <a
                     href="https://www.instagram.com/swayam_mvjce/"
                     target="_blank"
-                    class="flex justify-center items-center gap-4 text-white ls"
+                    className="flex justify-center items-center gap-4 text-white ls"
                   >
                     <FiInstagram size={30} />
                   </a>
                 </div>
-                <div class="h-6 w-px bg-white"></div>
-                <div class="group">
+                <div className="h-6 w-px bg-white"></div>
+                <div className="group">
                   <a
                     target="_blank"
-                    href="https://www.google.com/maps/place/MVJ+College+of+Engineering/@12.984114,77.7599852,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae0e0ddee6891b:0xbde773e8a7f7189d!8m2!3d12.984114!4d77.7621739!16s%2Fm%2F0b6ltsx"
-                    class="flex justify-center items-center gap-4 text-white ls group cursor-pointer"
+                    href="https://www.google.com/maps/place/MVJ+College+of+Engineering/@12.984114,77.7599852,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae0e0ddee6891b:0xbde773e8a7f7189d!8m2!3d12.984114!4d77.7621739"
+                    className="flex justify-center items-center gap-4 text-white ls group cursor-pointer"
                   >
                     <TbMapPinFilled size={45} />
                   </a>
                 </div>
               </div>
-              <p class="text-white font-semibold text-lg tracking-wider hover:text-purple-400 transition duration-200  mt-3">
+              <p className="text-white font-semibold text-lg tracking-wider hover:text-purple-400 transition duration-200  mt-3">
                 Swayam 2024 | Your Stage Awaits
               </p>
             </div>
