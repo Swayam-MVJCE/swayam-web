@@ -11,7 +11,7 @@ export default function Home() {
     <main className="overflow-x-hidden">
       <Navbar />
       <div className="min-h-screen flex flex-col items-center justify-center -mt-20">
-        <p className="font-mirtha w-fit md:w-full text-9xl text-center md:text-[160px]  tracking-wide leading-none select-none hover:tracking-wider transition-all duration-500 swayam-text">
+        <p className="text-white font-mirtha w-fit md:w-full text-9xl text-center md:text-[160px]  tracking-wide leading-none select-none hover:tracking-wider transition-all duration-500 swayam-text">
           YOUR STAGE AWAITS
         </p>
 
