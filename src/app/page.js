@@ -60,7 +60,7 @@ export default function Home() {
         <FeaturedEventsSlider />
         <Link
           href={'/events'}
-          className="font-satoshi text-center flex flex-row gap-2 text-2xl mt-4 tracking-normal leading-none bg-white text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500 swayam-text"
+          className="font-satoshi font-semibold text-center flex flex-row gap-2 items-center text-2xl py-8 tracking-normal leading-none bg-white text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500 swayam-text"
         >
           <span>Explore All Events</span>{' '}
           <IoIosArrowRoundForward color="#FFF" />

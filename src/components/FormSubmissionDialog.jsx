@@ -20,7 +20,7 @@ export default function FormSubmissionDialog({
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
           as="div"
-          className="relative z-10"
+          className="relative z-10 text-white"
           onClose={() => {
             return;
           }}
