@@ -45,6 +45,7 @@ const EventPage = async ({ params }) => {
       where: {
         slug,
       },
+      cache: true,
     });
   } catch (error) {
     console.error(error);

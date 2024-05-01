@@ -57,7 +57,7 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-      <div className="w-full flex justify-center font-satoshi text-sm mt-5 opacity-65">
+      <div className="w-full flex text-white justify-center font-satoshi text-sm mt-5 opacity-65">
         <Link
           href={'https://github.com/SWAYAM-MVJCE/swayam-web'}
           target="_blank"

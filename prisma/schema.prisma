@@ -122,6 +122,8 @@ model Participant {
   registrationId String
   name           String
   phone          String
+  isCheckedIn    Boolean?     @default(false)
+  checkedInAt    DateTime?
 }
 
 enum PaymentStatus {

@@ -1,7 +1,27 @@
 import { PrismaClient } from '@prisma/client';
+import { createCache } from 'async-cache-dedupe';
+import { Redis } from 'ioredis';
+import prismaCache from '@yxx4c/prisma-redis-cache';
+
+const redis = new Redis(process.env.REDIS_URL);
+
+const cache = createCache({
+  ttl: 3600, // Cache TTL in seconds
+  stale: 3600, // Stale TTL in seconds
+  storage: {
+    type: 'redis',
+    options: {
+      client: redis,
+      invalidation: { referencesTTL: 60 }, // Invalidation settings
+      log: console, // Logger for cache events
+    },
+  },
+});
 
 const prismaClientSingleton = () => {
-  return new PrismaClient();
+  const prisma = new PrismaClient();
+  const prismaWithCache = prisma.$extends(prismaCache({ redis, cache }));
+  return prismaWithCache;
 };
 
 if (typeof global.prismaGlobal === 'undefined') {
