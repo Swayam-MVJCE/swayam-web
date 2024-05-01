@@ -8,8 +8,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from './ui/dropdown-menu';
 
@@ -106,7 +104,7 @@ const Navbar = () => {
           </>
         )}
       </div>
-      <div className="md:hidden flex flex-row items-center gap-2">
+      <div className="md:hidden text-white flex flex-row items-center gap-2">
         {session ? (
           <>
             <DropdownMenu>
@@ -137,7 +135,7 @@ const Navbar = () => {
           <>
             <Link
               href="/login"
-              className="transition font-satoshi hover:text-rose-300 hover:scale-105 duration-300 font-semibold"
+              className="transition font-satoshi text-white hover:text-rose-300 hover:scale-105 duration-300 font-semibold"
             >
               Login
             </Link>
@@ -161,7 +159,7 @@ const Navbar = () => {
         </button>
       </div>
       {menuOpen && (
-        <div className="md:hidden absolute flex flex-col gap-3 font-satoshi top-20 left-0 bg-black bg-opacity-50 backdrop-blur-lg w-full py-6 px-8 rounded-md shadow-md">
+        <div className="md:hidden text-white absolute flex flex-col gap-3 font-satoshi top-20 left-0 bg-black bg-opacity-50 backdrop-blur-lg w-full py-6 px-8 rounded-md shadow-md">
           {session ? (
             <div className="flex flex-col gap-4">
               <Link href="/">Home</Link>

@@ -8,7 +8,7 @@ const AboutSwayamPage = () => {
       <div className="flex flex-col gap-20 px-4 md:px-16 md:py-10 pb-6">
         <div className="flex min-h-[60vh] flex-col md:flex-row items-center gap-4 justify-center md:justify-evenly md: px-16">
           <div className="flex w-full basis-3/5 flex-col gap-2 justify-center md:justify-start">
-            <h1 className="font-mirtha w-full text-6xl md:text-8xl tracking-wide leading-none select-none hover:tracking-wider transition-all duration-500 swayam-text mt-2 text-center md:text-left">
+            <h1 className="font-mirtha text-white w-full text-6xl md:text-8xl tracking-wide leading-none select-none hover:tracking-wider transition-all duration-500 swayam-text mt-2 text-center md:text-left">
               Swayam 2024
             </h1>
             <p className="font-satoshi text-lg text-gray-300 max-w-xl">
@@ -27,7 +27,7 @@ const AboutSwayamPage = () => {
             height={500}
           />
           <div className="flex basis-3/5 flex-col gap-4 justify-start">
-            <h1 className="font-mirtha w-fit md:w-full text-6xl md:text-8xl tracking-wide leading-none select-none hover:tracking-wider transition-all duration-500 swayam-text mt-2 text-center md:text-left">
+            <h1 className="font-mirtha text-white w-fit md:w-full text-6xl md:text-8xl tracking-wide leading-none select-none hover:tracking-wider transition-all duration-500 swayam-text mt-2 text-center md:text-left">
               MVJ College of Engineering
             </h1>
             <p className="font-satoshi text-lg text-gray-300">
