@@ -52,9 +52,9 @@ export default async function EventsPage({ searchParams }) {
     });
     eventsData.sort((a, b) => {
       // If 'a' is 'Main', it should come before 'b'
-      if (a.category === 'Main Event' && b.category !== 'Main Event') {
+      if (a.category === 'Mega Event' && b.category !== 'Mega Event') {
         return -1;
-      } else if (a.category !== 'Main Event' && b.category === 'Main Event') {
+      } else if (a.category !== 'Mega Event' && b.category === 'Mega Event') {
         return 1;
       } else {
         return 0; // Maintain the order for other categories
@@ -91,7 +91,7 @@ export default async function EventsPage({ searchParams }) {
         <div className="flex flex-row flex-wrap py-5 px-4 md:px-40 grid-cols-1 md:grid-cols-3 gap-8 items-stretch w-full justify-center">
           {eventsData &&
             eventsData.map((event) =>
-              event.category === 'Main Event' ? (
+              event.category === 'Mega Event' ? (
                 <FeaturedKalakshetraCard
                   key={event.id}
                   eventData={event}
