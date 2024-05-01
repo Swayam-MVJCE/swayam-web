@@ -49,6 +49,7 @@ export default async function EventsPage({ searchParams }) {
         category:
           selectedCategory === 'All Events' ? undefined : selectedCategory,
       },
+      cache: true,
     });
     eventsData.sort((a, b) => {
       // If 'a' is 'Main', it should come before 'b'

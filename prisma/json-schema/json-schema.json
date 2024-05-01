@@ -376,6 +376,20 @@
         },
         "phone": {
           "type": "string"
+        },
+        "isCheckedIn": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "default": false
+        },
+        "checkedInAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
         }
       },
       "required": [

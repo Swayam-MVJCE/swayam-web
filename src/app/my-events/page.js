@@ -23,6 +23,9 @@ const MyEventsPage = async () => {
     include: {
       event: true,
     },
+    cache: {
+      ttl: 60,
+    },
   });
 
   return (
