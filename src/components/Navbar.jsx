@@ -179,7 +179,7 @@ const Navbar = () => {
               <Link href="/">Home</Link>
               <Link href="/events">Events</Link>
               <Link href="/guidelines">Guidelines</Link>
-              <Link href="#">Contact</Link>
+              <Link href="/contact">Contact</Link>
             </>
           )}
         </div>
