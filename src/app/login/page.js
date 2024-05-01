@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Navbar from "@/components/Navbar";
-import React from "react";
-import { signIn } from "next-auth/react";
+import Navbar from '@/components/Navbar';
+import React from 'react';
+import { signIn } from 'next-auth/react';
 
 const LoginPage = () => {
   return (
@@ -20,13 +20,13 @@ const LoginPage = () => {
                     className="w-32 text-purple-500"
                     alt="logo"
                   />
-                  <h2 className="mb-8 text-2xl text-cyan-900 dark:text-white font-bold">
+                  <h2 className="mb-8 text-2xl text-white font-bold">
                     Login to get started with Swayam 2024
                   </h2>
                 </div>
                 <div className="mt-10 grid space-y-4">
                   <button
-                    onClick={() => signIn("google", { callbackUrl: "/" })}
+                    onClick={() => signIn('google', { callbackUrl: '/' })}
                     className="group h-12 px-6 border-2 border-gray-500 rounded-full transition duration-300 hover:border-purple-600 focus:bg-blue-50 active:bg-blue-100"
                   >
                     <div className="relative flex items-center space-x-4 justify-center">
@@ -35,19 +35,19 @@ const LoginPage = () => {
                         className="absolute left-0 w-5"
                         alt="google logo"
                       />
-                      <span className="block w-max font-semibold tracking-wide text-gray-700 dark:text-white text-sm transition duration-300 group-hover:text-purple-600-600 sm:text-base">
+                      <span className="block w-max font-semibold tracking-wide text-white text-sm transition duration-300 group-hover:text-purple-600-600 sm:text-base">
                         Continue with Google
                       </span>
                     </div>
                   </button>
                 </div>
-                <div className="mt-6 space-y-2 py-3 text-gray-600 dark:text-gray-400 text-center">
+                <div className="mt-6 space-y-2 py-3 text-gray-400 text-center">
                   <p className="text-xs">
-                    By proceeding, you agree to our{" "}
+                    By proceeding, you agree to our{' '}
                     <a href="/privacy-policy/" className="underline">
                       Terms of Use
-                    </a>{" "}
-                    and confirm you have read our{" "}
+                    </a>{' '}
+                    and confirm you have read our{' '}
                     <a href="/privacy-policy/" className="underline">
                       Privacy and Cookie Statement
                     </a>
