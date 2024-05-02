@@ -87,7 +87,7 @@ const TicketCard = ({ event, registration }) => {
             <QRCode
               bgColor="#fff"
               enableBackground={true}
-              value={`https://swayam.mvjce.edu.in/admin/registration/${registration.id}`}
+              value={registration.id}
               size={120}
               className="p-1 bg-white min-h-[120px] min-w-[120px] max-h-[120px] max-w-[120px]"
             />
