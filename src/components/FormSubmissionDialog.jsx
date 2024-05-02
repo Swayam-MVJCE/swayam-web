@@ -110,12 +110,14 @@ export default function FormSubmissionDialog({
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-base text-gray-300 text-center">
-                        Thanks for registering for the event. You will receive
-                        an email with your e-ticket shortly. <br />
+                        Thanks for registering for the event. We&apos;ll verify
+                        your payment status shortly. Please check back later to
+                        view your payment status.
+                        <br />
                         <br />
                         <p className="text-sm text-gray-400 text-center">
-                          You can also view the event details and your e-ticket
-                          from &lsquo;My Events&rsquo; section of your account.
+                          You can view the event details and your e-ticket from
+                          &lsquo;My Events&rsquo; section of your account.
                         </p>
                       </p>
                     </div>

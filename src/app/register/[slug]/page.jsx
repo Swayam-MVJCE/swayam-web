@@ -44,7 +44,7 @@ const RegistrationPage = async ({ params }) => {
   if (registration) {
     return (
       <MainLayout>
-        <div className="w-screen h-screen p-8 font-satoshi flex flex-col items-center justify-start text-white">
+        <div className="w-screen h-screen p-8 font-satoshi flex flex-col items-center justify-center text-white">
           <h1 className="text-3xl font-bold">
             You have already registered for this event.
           </h1>

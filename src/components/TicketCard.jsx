@@ -3,7 +3,6 @@ import React from 'react';
 import Tilt from 'react-parallax-tilt';
 import QRCode from 'react-qr-code';
 import Image from 'next/image';
-import Barcode from 'react-barcode';
 
 const TicketCard = ({ event, registration }) => {
   const options = {
@@ -12,7 +11,11 @@ const TicketCard = ({ event, registration }) => {
     month: 'short',
     year: 'numeric',
   };
-  const readableDate = event?.date.toLocaleDateString('en-US', options);
+  // const readableDate = event?.date.toLocaleDateString('en-US', options);
+  const readableDate = new Date(event?.date).toLocaleDateString(
+    'en-US',
+    options
+  );
   return (
     <Tilt gyroscope>
       <div
@@ -49,6 +52,14 @@ const TicketCard = ({ event, registration }) => {
               <div className="flex flex-col items-start">
                 <h1 className="font-bold text-xs md:text-md italic">Time</h1>
                 <h1 className="text-xs md:text-sm">{event?.time}</h1>
+              </div>
+              <div className="flex flex-col items-start">
+                <h1 className="font-bold text-xs md:text-md italic">
+                  Payment Status
+                </h1>
+                <h1 className="text-xs md:text-sm">
+                  {registration.paymentVerification}
+                </h1>
               </div>
             </div>
           </div>
