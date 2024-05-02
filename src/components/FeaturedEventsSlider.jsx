@@ -54,7 +54,7 @@ const slides = [
     image: '/images/featured-events/battle-of-bands.png',
     title: 'Battle of Bands',
     organizer: 'Music',
-    link: '/events/battle-of-bands',
+    link: '/events/Battle-of-Bands',
   },
   {
     image: '/images/featured-events/jam.png',
