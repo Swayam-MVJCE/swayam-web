@@ -16,14 +16,12 @@ const TicketPage = async ({ params }) => {
         participants: true,
         event: true,
       },
-      cache: true,
     });
 
     event = await prisma.event.findUnique({
       where: {
         id: registration.eventId,
       },
-      cache: true,
     });
     console.log(registration);
     console.log(event);

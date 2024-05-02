@@ -24,7 +24,7 @@ const MyEventsPage = async () => {
       event: true,
     },
     cache: {
-      ttl: 60,
+      ttl: 30,
     },
   });
 
@@ -73,7 +73,7 @@ const MyEventsPage = async () => {
             </div>
           ))
         ) : (
-          <div className="w-full h-fit flex flex-col gap-2 max-w-lg transform overflow-hidden rounded-xl bg-gray-500 bg-opacity-40 backdrop-blur-md p-6 text-center items-center justify-center align-middle shadow-xl transition-all">
+          <div className="w-full h-[450px] flex flex-col gap-2 max-w-lg transform overflow-hidden rounded-xl bg-gray-500 bg-opacity-40 backdrop-blur-md p-6 text-center items-center justify-center align-middle shadow-xl transition-all">
             <IoDocumentTextOutline size={60} color="#ff2200" />
             <h3 className="text-lg font-medium leading-6 text-gray-100">
               No events found.
