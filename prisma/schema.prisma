@@ -113,12 +113,12 @@ model Registration {
   screenshotUrl       String?
   createdAt           DateTime      @default(now())
   updatedAt           DateTime      @updatedAt
-  event               Event         @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  event               Event         @relation(fields: [eventId], references: [id])
 }
 
 model Participant {
   id             String       @id @default(cuid())
-  registration   Registration @relation(fields: [registrationId], references: [id])
+  registration   Registration @relation(fields: [registrationId], references: [id], onDelete: Cascade)
   registrationId String
   name           String
   phone          String
