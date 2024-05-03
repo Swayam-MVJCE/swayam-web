@@ -37,16 +37,18 @@ export async function generateMetadata({ params }) {
     ],
   };
 }
+
 const EventPage = async ({ params }) => {
   const { slug } = params;
   let eventData;
   try {
     eventData = await prisma.event.findUnique({
       where: {
-        slug,
+        slug: slug,
       },
       cache: {
-        ttl: 60,
+        ttl: 3600,
+        key: `event-${slug}`,
       },
     });
   } catch (error) {
