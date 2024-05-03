@@ -193,6 +193,12 @@
             "null"
           ]
         },
+        "eventCoordinatorInfo": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "poster_url": {
           "type": [
             "string",

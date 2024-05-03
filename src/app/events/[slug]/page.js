@@ -45,7 +45,9 @@ const EventPage = async ({ params }) => {
       where: {
         slug,
       },
-      cache: true,
+      cache: {
+        ttl: 60,
+      },
     });
   } catch (error) {
     console.error(error);
@@ -147,6 +149,15 @@ const EventPage = async ({ params }) => {
           </h1>
           <p className="whitespace-pre font-satoshi text-gray-300 leading-relaxed text-lg">{`${eventData.judgingCriteria}
           `}</p>
+          {eventData.eventCoordinatorInfo && (
+            <>
+              <h1 className="font-mirtha text-center text-5xl md:text-6xl mt-4 tracking-wide leading-none bg-gradient-purple text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500">
+                Event Coordinators
+              </h1>
+              <p className="whitespace-pre font-satoshi text-gray-300 leading-relaxed text-lg">{`${eventData.eventCoordinatorInfo}
+          `}</p>
+            </>
+          )}
         </div>
       </main>
     </MainLayout>
