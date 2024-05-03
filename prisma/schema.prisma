@@ -75,24 +75,25 @@ model VerificationToken {
 }
 
 model Event {
-  id              String         @id @default(uuid())
-  title           String
-  slug            String         @unique
-  description     String
-  judgingCriteria String?
-  rules           String?
-  poster_url      String?
-  date            DateTime?
-  time            String?
-  venue           String?
-  registrationFee Float?
-  firstPrize      String?
-  secondPrize     String?
-  category        String?
-  isGroup         Boolean?       @default(false)
-  minParticipants Int?           @default(1)
-  maxParticipants Int?           @default(1)
-  registrations   Registration[]
+  id                   String         @id @default(uuid())
+  title                String
+  slug                 String         @unique
+  description          String
+  judgingCriteria      String?
+  rules                String?
+  eventCoordinatorInfo String?
+  poster_url           String?
+  date                 DateTime?
+  time                 String?
+  venue                String?
+  registrationFee      Float?
+  firstPrize           String?
+  secondPrize          String?
+  category             String?
+  isGroup              Boolean?       @default(false)
+  minParticipants      Int?           @default(1)
+  maxParticipants      Int?           @default(1)
+  registrations        Registration[]
 
   @@map("events")
 }
