@@ -27,6 +27,7 @@ export const options = {
           'title',
           'description',
           'judgingCriteria',
+          'eventCoordinatorInfo',
           'rules',
           'firstPrize',
           'secondPrize',
@@ -44,6 +45,9 @@ export const options = {
             format: 'textarea',
           },
           rules: {
+            format: 'textarea',
+          },
+          eventCoordinatorInfo: {
             format: 'textarea',
           },
         },
