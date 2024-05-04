@@ -62,7 +62,7 @@ const Footer = () => {
           href={'https://github.com/SWAYAM-MVJCE/swayam-web'}
           target="_blank"
         >
-          Built by Swayam Dev Team
+          Built by Swayam Web-Dev Team (Click here for GitHub Repository)
         </Link>
       </div>
     </div>
