@@ -59,6 +59,7 @@ const Footer = () => {
       </div>
       <div className="w-full flex text-white justify-center font-satoshi text-sm mt-5 opacity-65">
         <Link
+          className="hover:text-rose-400 hover:scale-105 transition-all duration-300"
           href={'https://github.com/SWAYAM-MVJCE/swayam-web'}
           target="_blank"
         >
