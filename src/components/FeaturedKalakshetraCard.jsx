@@ -28,9 +28,9 @@ const FeaturedKalakshetraCard = ({ eventData, featured }) => {
             day: 'numeric',
             month: 'long',
             year: 'numeric',
-          })}
-          {' | '}
-          {eventData.time}
+            timeZone: 'Asia/Kolkata',
+          })}{' '}
+          - {eventData.time}
         </h3>
       </div>
     </Link>

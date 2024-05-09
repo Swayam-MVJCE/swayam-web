@@ -10,6 +10,7 @@ const TicketCard = ({ event, registration }) => {
     day: '2-digit',
     month: 'short',
     year: 'numeric',
+    timeZone: 'Asia/Kolkata',
   };
   // const readableDate = event?.date.toLocaleDateString('en-US', options);
   const readableDate = new Date(event?.date).toLocaleDateString(

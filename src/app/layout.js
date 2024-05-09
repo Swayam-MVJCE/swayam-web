@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
-        className={`${inter.variable} ${mirthaDisplay.variable} ${satoshi.variable} ${chamisty.variable} overflow-x-hidden`}
+        className={`${inter.variable} ${mirthaDisplay.variable} ${satoshi.variable} ${chamisty.variable} overflow-x-hidden overflow-y-scroll`}
       >
         <NextTopLoader color="#c800ff" />
         <Providers>{children}</Providers>

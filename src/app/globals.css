@@ -37,12 +37,22 @@ body {
 .bg-image {
   position: fixed;
   top: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(177, 125, 236, 1) 35%,
+    rgba(194, 59, 214, 1) 76%,
+    rgba(250, 151, 119, 1) 100%
+  );
   background-image: url('/bg-1.jpg');
   background-position: center;
   background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-attachment: fixed;
   width: 100%;
+  object-fit: fill;
   height: 100lvh;
   /* animation: bg-overlay infinite 10s alternate-reverse; */
   z-index: -2;
@@ -54,13 +64,15 @@ body {
   top: 0;
   background: rgb(8, 0, 14);
   background: linear-gradient(0deg, rgb(16, 0, 30) 30%, rgb(123, 0, 180) 120%);
-  height: 100dvh;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  max-width: 100dvw;
   width: 100%;
+  object-fit: fill;
+  height: 100lvh;
   z-index: -2;
   opacity: 0.6;
   animation: bg-gradient-overlay 5s infinite alternate;
@@ -78,7 +90,7 @@ body {
 .light-container {
   position: fixed;
   width: 100dvw;
-  height: 100dvh;
+  height: 100lvh;
   top: 0;
   left: 0;
   z-index: -1;
@@ -147,9 +159,9 @@ body {
 
 .blurred-lighting {
   position: absolute;
-  width: 1400px; /* Adjust the width of the blurred lighting image as needed */
-  height: 1400px; /* Adjust the height of the blurred lighting image as needed */
-  background-image: url('/images/star-lighting.png');
+  width: 1400px;
+  height: 1400px;
+  background-image: url('/images/star-lighting.webp');
   background-size: cover;
   background-repeat: no-repeat;
   z-index: -1;
@@ -180,38 +192,6 @@ body {
   bottom: -90%;
   right: -50%;
   animation-name: moveYBottomRight;
-}
-
-@media screen and (max-width: 768px) {
-  .blurred-lighting {
-    width: 800px;
-    height: 800px;
-  }
-
-  .top-left {
-    position: absolute;
-    top: 2px;
-    left: -400px;
-    animation-name: moveYTopLeft;
-  }
-  .top-right {
-    position: absolute;
-    top: 2px;
-    right: -400px;
-    animation-name: moveYTopRight;
-  }
-  .bottom-left {
-    position: absolute;
-    bottom: 200px;
-    left: -400px;
-    animation-name: moveYBottomLeft;
-  }
-  .bottom-right {
-    position: absolute;
-    bottom: 2px;
-    right: -400px;
-    animation-name: moveYBottomRight;
-  }
 }
 
 @keyframes moveYTopLeft {
@@ -271,6 +251,27 @@ body {
   100% {
     transform: translateY(0) rotate(720deg);
     filter: saturate(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blurred-lighting {
+    display: none;
+  }
+  .light-container {
+    display: none;
+  }
+  .top-left {
+    display: none;
+  }
+  .top-right {
+    display: none;
+  }
+  .bottom-left {
+    display: none;
+  }
+  .bottom-right {
+    display: none;
   }
 }
 

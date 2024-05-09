@@ -71,8 +71,13 @@ export function RegistrationEmail({ registration }) {
                 </Text>
                 <Text style={{ ...paragraph, marginTop: -5 }}>
                   <b>Date & Time: </b>
-                  {new Date(registration.event.date).toDateString()} at{' '}
-                  {registration.event.time}
+                  {new Date(registration.event.date).toLocaleDateString('en', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                    timeZone: 'Asia/Kolkata',
+                  })}{' '}
+                  - {registration.event.time}
                 </Text>
                 <Text style={{ ...paragraph, marginTop: -5 }}>
                   <b>Venue: </b>

@@ -90,6 +90,7 @@ const EventPage = async ({ params }) => {
                       day: 'numeric',
                       month: 'long',
                       year: 'numeric',
+                      timeZone: 'Asia/Kolkata',
                     })}{' '}
                     - {eventData.time}
                   </span>

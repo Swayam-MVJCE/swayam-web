@@ -41,7 +41,7 @@ const Navbar = () => {
           Home
         </Link>
         <Link
-          href="/events"
+          href="/events?category=All%20Events"
           className="transition hover:text-rose-300 hover:scale-105 duration-300"
         >
           Events
@@ -121,7 +121,7 @@ const Navbar = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="font-medium">
                 <DropdownMenuItem>
-                  <Link href="/events">My Events</Link>
+                  <Link href="/events?category=All%20Events">My Events</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <button onClick={() => signOut({ callbackUrl: '/' })}>
@@ -163,7 +163,7 @@ const Navbar = () => {
           {session ? (
             <div className="flex flex-col gap-4">
               <Link href="/">Home</Link>
-              <Link href="/events">Events</Link>
+              <Link href="/events?category=All%20Events">Events</Link>
               <Link href="/guidelines">Guidelines</Link>
               <Link href="/contact">Contact</Link>
               <Link href="/about-swayam">About</Link>
@@ -177,7 +177,7 @@ const Navbar = () => {
           ) : (
             <>
               <Link href="/">Home</Link>
-              <Link href="/events">Events</Link>
+              <Link href="/events?category=All%20Events">Events</Link>
               <Link href="/guidelines">Guidelines</Link>
               <Link href="/contact">Contact</Link>
             </>
