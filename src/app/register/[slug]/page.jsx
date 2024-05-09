@@ -69,7 +69,6 @@ const RegistrationPage = async ({ params }) => {
     amount: event.registrationFee,
     transactionNote: `Registration for ${event.title} by ${session.user.email}`,
     transactionRef: `Registration for ${event.title}`,
-    transactionId: `Registration-${event.id},${session.user.email}`,
   });
 
   return (
