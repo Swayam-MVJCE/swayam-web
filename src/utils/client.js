@@ -3,7 +3,7 @@ import { createCache } from 'async-cache-dedupe';
 import { Redis } from 'ioredis';
 import prismaCache from '@yxx4c/prisma-redis-cache';
 
-const redis = new Redis(process.env.REDIS_URL);
+export const redis = new Redis(process.env.REDIS_URL);
 
 const cache = createCache({
   ttl: 3600, // Cache TTL in seconds
@@ -30,7 +30,7 @@ if (typeof global.prismaGlobal === 'undefined') {
 
 const prisma = global.prismaGlobal || prismaClientSingleton();
 
-module.exports = prisma;
+export default prisma;
 
 if (process.env.NODE_ENV !== 'production') {
   global.prismaGlobal = prisma;
