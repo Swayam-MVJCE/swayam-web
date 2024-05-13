@@ -67,8 +67,6 @@ const RegistrationPage = async ({ params }) => {
     payeeVPA: 'EzE0046709@CUB',
     payeeName: 'THE PRINCIPAL MVJ COLLEGE',
     amount: event.registrationFee,
-    transactionNote: `Registration for ${event.title} by ${session.user.email}`,
-    transactionRef: `${session.user.email}`,
   });
 
   return (
