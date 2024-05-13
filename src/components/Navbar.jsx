@@ -68,7 +68,7 @@ const Navbar = () => {
           <>
             <Link
               href="/my-events"
-              className="transition hover:text-rose-300 hover:scale-105 duration-300"
+              className="transition text-whitr hover:text-rose-300 hover:scale-105 duration-300"
             >
               My Events
             </Link>
@@ -84,7 +84,7 @@ const Navbar = () => {
                   {/* <p className="font-bold">{session.user.name}</p> */}
                 </div>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="font-medium">
+              <DropdownMenuContent className="font-medium text-white">
                 <DropdownMenuItem>
                   <button onClick={() => signOut({ callbackUrl: '/' })}>
                     Logout
@@ -121,7 +121,7 @@ const Navbar = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="font-medium">
                 <DropdownMenuItem>
-                  <Link href="/events?category=All%20Events">My Events</Link>
+                  <Link href="/my-events">My Events</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <button onClick={() => signOut({ callbackUrl: '/' })}>
