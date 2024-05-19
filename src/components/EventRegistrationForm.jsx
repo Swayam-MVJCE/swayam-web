@@ -342,7 +342,7 @@ const EventRegistrationForm = ({ event, session, qr }) => {
             <p className="text-lg text-center -mt-2 font-semibold text-purple-300">
               &#8377;{event.registrationFee}
             </p>
-            <a
+            {/* <a
               href={qr.intent}
               target="_blank"
               className="md:hidden flex flex-row w-full justify-center bg-gray-500 bg-opacity-50 border border-purple-400 px-4 py-2 rounded-lg font-semibold text-gray-200"
@@ -354,7 +354,7 @@ const EventRegistrationForm = ({ event, session, qr }) => {
                 className="h-6 ml-2"
               />
               <img src="/images/gpay-logo.png" alt="UPI" className="h-6 ml-2" />
-            </a>
+            </a> */}
             {(event.isGroup || isMobile) && (
               <>
                 <FormField
