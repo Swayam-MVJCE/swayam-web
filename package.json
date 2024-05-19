@@ -24,6 +24,7 @@
     "@react-email/components": "^0.0.17",
     "@react-email/render": "^0.0.12",
     "@react-pdf/renderer": "^3.4.2",
+    "@sentry/nextjs": "^8.2.1",
     "@vercel/analytics": "^1.2.2",
     "@yudiel/react-qr-scanner": "^2.0.0-beta.3",
     "@yxx4c/prisma-redis-cache": "^1.0.1",
