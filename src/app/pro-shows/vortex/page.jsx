@@ -5,7 +5,7 @@ import React from 'react';
 const VortexPage = async () => {
   return (
     <MainLayout>
-      <main className="px-4 md:px-24 py-12 flex-col flex gap-6 items-center justify-center h-screen">
+      <main className="px-4 md:px-24 py-12 flex-col flex gap-6 items-center justify-center md:h-screen">
         <div className="flex flex-col md:flex-row items-start justify-center gap-8">
           <div className="flex flex-col md:flex-row h-full justify-center items-start w-full gap-6 md:gap-16 ">
             <div className="w-full md:h-[400px] md:w-[400px] aspect-square rounded-lg overflow-hidden relative hover:scale-105 transition duration-200">
