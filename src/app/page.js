@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import GalleryTicker from '@/components/GalleryTicker';
 import Navbar from '@/components/Navbar';
 import ParallaxScroll from '@/components/ParallaxScroll';
+import ProShowsSlider from '@/components/ProShowsSlider';
 import Link from 'next/link';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 
@@ -41,6 +42,16 @@ export default function Home() {
             />
           </video>
         </div>
+      </div>
+      <div
+        id="featured"
+        className="min-h-screen relative w-full flex flex-col items-center justify-center"
+      >
+        <h1 className="font-mirtha text-center text-8xl relative  md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 tracking-wide leading-none bg-white text-transparent bg-clip-text select-none hover:tracking-wider transition-all duration-500 swayam-text">
+          PRO SHOWS
+        </h1>
+
+        <ProShowsSlider />
       </div>
       <div className="flex min-h-screen flex-row items-center justify-center">
         <ParallaxScroll />
