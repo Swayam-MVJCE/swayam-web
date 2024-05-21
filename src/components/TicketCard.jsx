@@ -23,10 +23,10 @@ const TicketCard = ({ event, registration }) => {
       style={{
         fontFamily: 'Satoshi, sans-serif',
       }}
-      className="purple-card-gradient w-[300px] h-[400px] sm:w-[400px] sm:min-h-[500px] rounded-md text-white border border-fuchsia-400 shadow-lg shadow-purple-600"
+      className="purple-card-gradient w-[300px] sm:w-[400px] h-fit rounded-md text-white border border-fuchsia-400 shadow-lg shadow-purple-600"
     >
       <div className="flex flex-col justify-between w-full h-full p-4">
-        <div className="w-full flex items-center justify-between">
+        <div className="w-full flex items-center justify-between text-right">
           <Image src="/images/swayam-logo.svg" width={90} height={90} />
 
           <div className="flex flex-col items-start">
