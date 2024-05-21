@@ -33,7 +33,7 @@ const TicketPage = async ({ params }) => {
   return (
     <MainLayout>
       <Ticket event={event} registration={registration} />
-      <div className="flex w-full justify-center items-center py-6 font-satoshi">
+      <div className="flex w-full h-screen justify-center items-center py-6 font-satoshi">
         <PrintTicketButton
           event={event}
           ticketComponent={<Ticket event={event} registration={registration} />}
