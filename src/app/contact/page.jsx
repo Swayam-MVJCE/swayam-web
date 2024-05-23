@@ -257,10 +257,10 @@ const Contact = () => {
                   <p className="mt-2 text-white">
                     Hameem I Shanavas-{' '}
                     <a
-                      href="tel:+918017991099"
+                      href="tel:+919620659690"
                       className="underline font-bold text-fuchsia-500 hover:text-pink-400"
                     >
-                      +918017991099
+                      +919620659690
                     </a>
                   </p>
                 </div>
