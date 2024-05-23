@@ -64,6 +64,7 @@ export const options = {
     Registration: {
       title: 'Registrations',
       list: {
+        search: ['name', 'collegeName', 'phone', 'paymentId', 'event'],
         fields: {
           event: {
             formatter: (event) => event.title,

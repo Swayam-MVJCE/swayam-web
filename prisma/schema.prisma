@@ -115,6 +115,8 @@ model Registration {
   createdAt           DateTime      @default(now())
   updatedAt           DateTime      @updatedAt
   event               Event         @relation(fields: [eventId], references: [id])
+  isCheckedIn         Boolean?      @default(false)
+  checkedInAt         DateTime?
 }
 
 model Participant {

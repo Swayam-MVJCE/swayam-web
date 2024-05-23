@@ -358,6 +358,20 @@
         },
         "event": {
           "$ref": "#/definitions/Event"
+        },
+        "isCheckedIn": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "default": false
+        },
+        "checkedInAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
         }
       },
       "required": [
