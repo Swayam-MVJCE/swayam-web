@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from './ui/button';
 import {
+  allParticipantCheckin,
   participantCheckin,
   singleParticipantCheckin,
 } from '@/app/actions/participantCheckin';
@@ -23,6 +24,8 @@ const ParticipantCheckInButton = ({
   registration,
   participant,
   singleCheckIn = false,
+  all = false,
+  participantsArray,
   className = '',
 }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -60,6 +63,24 @@ const ParticipantCheckInButton = ({
     setIsLoading(false);
     setIsDialogOpen(false);
   }
+  async function handleAllCheckInBtnClick() {
+    if (isLoading || !participantsArray) return;
+    setIsLoading(true);
+    const response = await allParticipantCheckin(
+      registration.id,
+      participantsArray
+    );
+    if (response.error) {
+      toast.error(response.error);
+    } else {
+      setSuccess(true);
+      toast.success('All Participants Checked-In successfully', {
+        autoClose: 800,
+      });
+    }
+    setIsLoading(false);
+    setIsDialogOpen(false);
+  }
 
   return (
     <Dialog
@@ -73,14 +94,19 @@ const ParticipantCheckInButton = ({
           </span>
         ) : (
           <Button className={cn('px-3 w-full', className)} variant="default">
-            {isLoading ? 'Checking In...' : 'Check-In'}
+            {isLoading
+              ? 'Checking In...'
+              : all
+              ? 'Check-In All Participants'
+              : 'Check-In'}
           </Button>
         )}
       </DialogTrigger>
       <DialogContent className="my-4">
         <DialogHeader>
           <DialogTitle>
-            Are you sure you want to Check-in this participant?
+            Are you sure you want to Check-in{' '}
+            {all ? 'All Participants' : 'this Participant'}
           </DialogTitle>
         </DialogHeader>
         <DialogFooter className="flex flex-col gap-4">
@@ -94,6 +120,8 @@ const ParticipantCheckInButton = ({
             onClick={
               singleCheckIn
                 ? handleSingleCheckInBtnClick
+                : all
+                ? handleAllCheckInBtnClick
                 : handleCheckInBtnClick
             }
           >

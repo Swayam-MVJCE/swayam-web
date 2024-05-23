@@ -36,7 +36,6 @@ const TicketVerificationPage = async ({ params }) => {
         participants: true,
         event: true,
       },
-      cache: false,
     });
   } catch (error) {
     console.log(error);
@@ -127,7 +126,7 @@ const TicketVerificationPage = async ({ params }) => {
                   {participant.name}
                 </span>
                 {participant.isCheckedIn ? (
-                  <span className="text-xs text-green-600 font-semibold w-max flex flex-col">
+                  <span className="text-xs text-green-700 font-semibold w-max flex flex-col">
                     <span>Checked-In</span>
                     <span>
                       {new Date(participant.checkedInAt).toLocaleString()}
@@ -142,6 +141,16 @@ const TicketVerificationPage = async ({ params }) => {
                 )}
               </div>
             ))}
+            {registration.participants.filter(
+              (participant) => !participant.isCheckedIn
+            ).length != 0 && (
+              <ParticipantCheckInButton
+                className="self-end w-full"
+                registration={registration}
+                all={true}
+                participantsArray={registration.participants}
+              />
+            )}
           </div>
         </div>
       )}
